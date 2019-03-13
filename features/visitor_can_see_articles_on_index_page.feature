@@ -6,5 +6,5 @@ Feature: List articles on the landing page
 
   Scenario: View list of articles on the landing page
     When I visit the site
-    Then I should see "Breaking news"
+    Then I should see "The Viking Times"
     And I should see "Tech news"
