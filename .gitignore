@@ -3,7 +3,7 @@
 
 /log/*
 /tmp/*
-!/log/.keep
+!/log/keep
 !/tmp/.keep
 
 /storage/*
