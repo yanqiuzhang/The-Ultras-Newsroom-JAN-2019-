@@ -1,5 +1,10 @@
 {
   "name": "The-Ultras-Newsroom-JAN-2019-",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "@rails/webpacker": "^4.0.2"
+  },
+  "devDependencies": {
+    "webpack-dev-server": "^3.2.1"
+  }
 }
