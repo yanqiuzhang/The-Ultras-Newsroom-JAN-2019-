@@ -1,2 +1,12 @@
 <h1>The Viking Times</h1>
-<h3>Tech news</h3>
+<% @articles.each do |article|%>
+    <%= link_to article.title, articles_index_path(article) %>
+    <p> article.content
+    </p>
+    <h1>
+        <% article.title %>
+    </h1>
+    <p>
+        <%= article.content%>
+    </p>
+<% end %> 

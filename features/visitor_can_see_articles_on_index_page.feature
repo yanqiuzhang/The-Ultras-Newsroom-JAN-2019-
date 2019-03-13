@@ -4,7 +4,12 @@ Feature: List articles on the landing page
     In order to choose an article to read
     I would like to be able to see the articles listed on a page
 
+Background: 
+    Given the following articles exist
+            |                       title                            |                                      content                                        |
+            |           Voted best mead recipe        |     Restaurant wins prize for best mead in Sweden           |
+            |   Ancient viking grave discovered   |    Kids come across sword protruding from the earth       |
+
   Scenario: View list of articles on the landing page
     When I visit the site
     Then I should see "The Viking Times"
-    And I should see "Tech news"
