@@ -4,7 +4,7 @@ end
 
 Given("the following articles exist") do |table|
     table.hashes.each do |article|
-        Article.create(article)
+        FactoryBot.create(:article, article)
     end
 end
 
