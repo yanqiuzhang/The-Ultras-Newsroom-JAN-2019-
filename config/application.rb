@@ -17,7 +17,7 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module I18N
+module TheUltraNewsRoomJan2019
   class Application < Rails::Application
       config.load_defaults 5.2
       config.generators do |generate|

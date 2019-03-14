@@ -2,8 +2,6 @@
 <%= link_to_unless_current "Svenska", locale: 'sv' %>
 <%= link_to t('login'), "/" %>
 
-
-
 <% @articles.each do |article| %>
     <h1>
         <%= article.title %>
