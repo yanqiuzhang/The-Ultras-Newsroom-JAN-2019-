@@ -17,11 +17,10 @@ require "sprockets/railtie"
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
 
-module TheUltrasNewsroomJan2019
+module I18N
   class Application < Rails::Application
-    # Initialize configuration defaults for originally generated Rails version.
-    config.load_defaults 5.2
-    config.generators do |generate|
+      config.load_defaults 5.2
+      config.generators do |generate|
       generate.helper false
       generate.assets false
       generate.view_specs false
@@ -30,6 +29,8 @@ module TheUltrasNewsroomJan2019
       generate.controller_specs false
       generate.system_tests false
     end
+    config.i18n.available_locales = [:sv, :en]
+    config.i18n.default_locale = :en
     config.generators.system_tests = nil
   end
 end
