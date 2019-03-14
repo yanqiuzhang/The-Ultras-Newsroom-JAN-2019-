@@ -17,4 +17,4 @@ Feature: Visitor can read a specific article
         When I click on "Voted best mead recipe"
         And I should see the article "Voted best mead recipe"
         When I click on "Back"
-        Then I should see the "index" page
+        
