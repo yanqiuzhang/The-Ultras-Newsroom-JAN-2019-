@@ -8,6 +8,6 @@ Given("the following articles exist") do |table|
     end
 end
 
-When("I click {string}") do |string|
-    click_on string
+When("I click {string}") do |element|
+    click_on element
 end
