@@ -8,3 +8,9 @@ Given("the following articles exist") do |table|
     end
 end
 
+Given("the following categories exist") do |table|
+    table.hashes.each do |category|
+        create(:category, category)
+    end
+end
+
