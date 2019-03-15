@@ -1,5 +1,5 @@
 class Article < ApplicationRecord
-    belongs_to :category
+    has_and_belongs_to_many :category
     validates :title, presence: true
     validates :content, presence: true
     validates :lead, presence: true

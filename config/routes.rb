@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
-    resources :articles, only: [:index]
     root controller: :articles, action: :index
+    resources :categories do
+        resources :articles, only: [:index]
+    end
 end
