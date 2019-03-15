@@ -1,7 +1,7 @@
 Feature: Visitor can view articles in categories
     As a visitor
     In order to view articles within a specific subject
-    I would like to be able to see the articles displayed in categories
+    I would like to be able to filter the articles displayed in categories
 
     Background:
         Given the following categories exist
@@ -16,6 +16,6 @@ Feature: Visitor can view articles in categories
             |  Ancient viking grave discovered               |  Kids came across sword      |  Kids come across sword protruding from the earth    |   Breaking news   |
             |  Drinking wine improves general health    |  Drink wine today!                |  Studies show that wine is good for your heart             |   Health               |
 
-        Scenario: A visitor can see articles within a specific category
+        Scenario: A visitor can filter articles within a specific category
             When I visit the site
             And 
