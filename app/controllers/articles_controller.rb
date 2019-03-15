@@ -1,12 +1,11 @@
 class ArticlesController < ApplicationController
     protect_from_forgery
-    before_action :authenticate_user!
     def index
         @articles = Article.all
     end
 
     def new
-        
+        if_
     end
 
     def create
