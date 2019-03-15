@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
     end
 
     def new
-        if_
+        
     end
 
     def create
