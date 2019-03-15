@@ -24,4 +24,8 @@ end
 Then("I fill in {string} with {string}") do |field, input|
     fill_in field, with: input
 end
+
+When("I click {string}") do |element|
+    click_on element
+end
   

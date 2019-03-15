@@ -9,7 +9,11 @@ Feature: Journalist can create articles
         And I am logged in as 'jocke@craft.se'
         And I visit the journalist page
         Then I fill in "Title" with "Vikings living amongst us"
-        And I fill in "Lead" with "sdfasdfasdfasdf"
-        And I fill in "Content" with "sadfasdasdf"
-        
+        And I fill in "Lead" with "Hurra"
+        And I fill in "Content" with "Vad kul"
+        When I click "Save Article"
+        Then I should see "Article was successfully created."
+        # And I should see "Hurra"
+        # And I should see "Vad kul"
+
 
