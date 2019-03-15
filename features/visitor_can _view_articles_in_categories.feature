@@ -5,17 +5,24 @@ Feature: Visitor can view articles in categories
 
     Background:
         Given the following categories exist
-            | category              |
-            | Lifestyle              |
-            | Breaking news    |
-            | Health                 |
+            | category      |
+            | Lifestyle     |
+            | Breaking news |
+            | Health        |
 
         Given the following articles exist
-            |  title                                                           |  lead                                     |  content                                                                        |   category            |
-            |  Voted best mead recipe                           |  Restaurant wins prize           |  Restaurant wins prize for best mead in Sweden         |   Lifestyle             |
-            |  Ancient viking grave discovered               |  Kids came across sword      |  Kids come across sword protruding from the earth    |   Breaking news   |
-            |  Drinking wine improves general health    |  Drink wine today!                |  Studies show that wine is good for your heart             |   Health               |
+            | title                                 | lead                   | content                                          | category      |
+            | Voted best mead recipe                | Restaurant wins prize  | Restaurant wins prize for best mead in Sweden    | Lifestyle     |
+            | Ancient viking grave discovered       | Kids came across sword | Kids come across sword protruding from the earth | Breaking News |
+            | Drinking wine improves general health | Drink wine today!      | Studies show that wine is good for your heart    | Health        |
 
-        Scenario: A visitor can filter articles within a specific category
-            When I visit the site
-            And 
+    Scenario: A visitor can filter articles within a specific category
+        When I visit the site
+        Then I should see "Lifestyle"
+        And I should see "Voted best mead recipe"
+        And I should see "Breaking News"
+        And I should see "Ancient viking grave discovered"
+        And I should see "Health"
+        And I should see "Drinking wine improves general health"
+
+         

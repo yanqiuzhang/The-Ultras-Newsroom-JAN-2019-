@@ -8,6 +8,11 @@ Given("the following articles exist") do |table|
     end
 end
 
+#     category = Category.find_by(category: article[:category])
+#     article.except!('category_id')
+#         create(:article, article.merge(category: category)) 
+# end
+
 Given("the following categories exist") do |table|
     table.hashes.each do |category|
         create(:category, category)
