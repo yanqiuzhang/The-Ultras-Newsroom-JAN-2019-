@@ -8,3 +8,12 @@ Given("the following articles exist") do |table|
     end
 end
 
+When("I click on {string}") do |element|
+    click_on element
+end
+  
+When("I should see the article {string}") do |content|
+    expect(page).to have_content content  
+end
+
+
