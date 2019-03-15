@@ -8,6 +8,10 @@ class ArticlesController < ApplicationController
         
     end
 
+    def show
+        @article = Article.find(params[:id])
+    end
+
     def create
         @article = Article.new(article_params)
        
@@ -18,5 +22,5 @@ class ArticlesController < ApplicationController
     private
     def article_params
         params.require(:article).permit(:title, :content, :lead)
-    end 
+    end     
 end
