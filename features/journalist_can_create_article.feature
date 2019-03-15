@@ -7,7 +7,7 @@ Feature: Journalist can create articles
     Background: 
         Given the following users exist
             | email          | password | role       |
-            | jocke@craft.se | password | journalist |       
+            | jocke@craft.se | password | journalist |
         And I am logged in as 'jocke@craft.se'
 
     Scenario: Journalist can create article

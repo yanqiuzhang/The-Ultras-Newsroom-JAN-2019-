@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
     protect_from_forgery
+    before_action :check_journalist, only: [:create, :new]
     def index
         @articles = Article.all
     end
@@ -20,6 +21,11 @@ class ArticlesController < ApplicationController
     end
        
     private
+
+    def check_journalist
+        current_user.journalist?
+    end
+
     def article_params
         params.require(:article).permit(:title, :content, :lead)
     end     
