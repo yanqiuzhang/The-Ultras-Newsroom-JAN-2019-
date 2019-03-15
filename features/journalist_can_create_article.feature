@@ -13,7 +13,3 @@ Feature: Journalist can create articles
         And I fill in "Content" with "Vad kul"
         When I click "Save Article"
         Then I should see "Article was successfully created."
-        # And I should see "Hurra"
-        # And I should see "Vad kul"
-
-
