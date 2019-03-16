@@ -1,5 +1,5 @@
 When("I visit the site") do
-    visit root_path
+    visit articles_path
 end
 
 Given("the following articles exist") do |table|
@@ -16,4 +16,8 @@ When("I should see the article {string}") do |content|
     expect(page).to have_content content  
 end
 
-
+Given("the following categories exist") do |table|
+    table.hashes.each do |category|
+        create(:category, category)
+    end
+end
