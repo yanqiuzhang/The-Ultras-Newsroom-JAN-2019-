@@ -6,7 +6,7 @@ Feature: Visitor can view articles in categories
     Background:
         Given the following categories exist
             | name          | id |
-            | Breaking news | 1  |
+            | Breaking News | 1  |
             | Politics      | 2  |
             | Sport         | 3  |
             | Lifestyle     | 4  |
