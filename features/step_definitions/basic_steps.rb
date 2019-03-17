@@ -8,14 +8,16 @@ Given("the following articles exist") do |table|
     end
 end
 
-#     category = Category.find_by(category: article[:category])
-#     article.except!('category_id')
-#         create(:article, article.merge(category: category)) 
-# end
+When("I click on {string}") do |element|
+    click_on element
+end
+  
+When("I should see the article {string}") do |content|
+    expect(page).to have_content content  
+end
 
 Given("the following categories exist") do |table|
     table.hashes.each do |category|
         create(:category, category)
     end
 end
-
