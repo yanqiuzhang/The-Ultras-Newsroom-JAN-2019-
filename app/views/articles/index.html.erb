@@ -1,11 +1,12 @@
 <h1> The Viking Times </h1>
 <body>
+<div class="flex justify-center">
 <% @articles.each do |article|%>
     <%=  link_to(article_path(article)) do %>
-    <div class="max-w-sm rounded overflow-hidden shadow-lg">
-        <img class="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="#">
+    <div class="max-w-xs m-auto rounded overflow-hidden shadow-lg">
+        <img class="w-full" src="" alt="">
         <div class="px-6 py-4">
-        <div class="font-bold text-xl mb-2"><%= article.title %></div>
+        <div class="font-bold text-xl mb-2 justify-center"><%= article.title %></div>
         <p class="text-grey-darker text-base"><%= article.lead %></p>
         </div>
         <div class="px-6 py-4">
@@ -13,4 +14,5 @@
     </div>
     <% end %>
 <% end %>
+</div>
 </body>
