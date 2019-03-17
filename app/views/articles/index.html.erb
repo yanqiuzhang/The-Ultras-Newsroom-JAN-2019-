@@ -2,8 +2,7 @@
 <body>
 <% @articles.each do |article|%>
     <%=  link_to(article_path(article)) do %>
-        <div class="article-cards">
-        <div class="max-w-sm rounded overflow-hidden shadow-lg">
+    <div class="max-w-sm rounded overflow-hidden shadow-lg">
         <img class="w-full" src="https://tailwindcss.com/img/card-top.jpg" alt="#">
         <div class="px-6 py-4">
         <div class="font-bold text-xl mb-2"><%= article.title %></div>
@@ -11,8 +10,7 @@
         </div>
         <div class="px-6 py-4">
         </div>
-        </div>
-        </div>
+    </div>
     <% end %>
 <% end %>
 </body>
