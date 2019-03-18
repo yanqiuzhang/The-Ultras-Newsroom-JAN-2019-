@@ -1,15 +1,13 @@
 <%= link_to_unless_current "English", locale: 'en' %>
 <%= link_to_unless_current "Svenska", locale: 'sv' %>
+
 <%= link_to t('login'), "/" %>
 
-<% @articles.each do |article| %>
-    <h1>
+<h1> The Viking Times </h1>
+
+<% @articles.each do |article|%>
+    <%=  link_to(article_path(article)) do %>
         <%= article.title %>
-    </h1>
-    <p>
         <%= article.lead %>
-    </p>
-    <p>
-        <%= article.content %>
-    </p>
-<% end %> 
+    <% end %>
+<% end %>
