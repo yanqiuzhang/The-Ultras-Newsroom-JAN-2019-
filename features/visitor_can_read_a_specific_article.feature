@@ -14,7 +14,6 @@ Feature: Visitor can read a specific article
         When I visit the site
         Then I should see "Voted best mead recipe"
         And I should see "Ancient viking grave discovered"
-        When I click on "Voted best mead recipe"
-        And I should see the article "Voted best mead recipe"
-        When I click on "Back"
-        
+        When I click "Voted best mead recipe"
+        And I should see "Voted best mead recipe"
+        When I click "Back"      
