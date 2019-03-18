@@ -8,12 +8,11 @@
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= stylesheet_pack_tag 'application' %>
-    <%= link_to_unless_current "English", locale: 'en' %>
-    <%= link_to_unless_current "Svenska", locale: 'sv' %>
-
   </head>
 
   <body>
+    <%= link_to_unless_current "English", locale: 'en' %>
+    <%= link_to_unless_current "Svenska", locale: 'sv' %>
     <%= notice || alert %>
     <%= yield %>
     <% if user_signed_in? %>
