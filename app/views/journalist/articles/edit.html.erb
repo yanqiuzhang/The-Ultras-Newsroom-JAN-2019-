@@ -1,21 +1,6 @@
 <h1>Edit article</h1>
  
-<%= form_with(model: @article, local: true) do |form| %>
- 
-    <% if @article.errors.any? %>
-        <div id="error_explanation">
-        <h2>
-            <%= pluralize(@article.errors.count, "error") %> prohibited
-            this article from being saved:
-        </h2>
-        <ul>
-            <% @article.errors.full_messages.each do |msg| %>
-            <li><%= msg %></li>
-            <% end %>
-        </ul>
-        </div>
-    <% end %>
- 
+<%= form_with model: @article, local: true do |form| %>
     <p>
         <%= form.label :title %><br>
         <%= form.text_field :title %>
@@ -30,7 +15,6 @@
         <%= form.label :content %><br>
         <%= form.text_area :content %>
     </p>
-
  
     <p>
         <%= form.submit %>
@@ -38,10 +22,10 @@
 
     <p> 
         <%= link_to 'Delete', 
-                    article_path(@article), 
-                                method: :delete,
-                                data: { confirm: 'Are you sure?' } 
-                                 %>     
+            journalist_article_path(@article), 
+                method: :delete,
+                data: { confirm: 'Are you sure?' } 
+                    %>     
     </p>
         
 <% end %>
