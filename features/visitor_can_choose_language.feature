@@ -4,9 +4,9 @@ Feature: Visitor can choose language
     In order to be able to read articles in my native language,
     I would like to switch between languages English and Swedish
 
-Background: 
-    Given I am logged in as "alecia@craft.se"
-    And I visit the site
+    Background: 
+        Given I am logged in as "alecia@craft.se"
+        And I visit the site
 
     Scenario: Visitor can change language to English
         When I click "English"
