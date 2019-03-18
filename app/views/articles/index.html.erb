@@ -1,23 +1,22 @@
 <h1> The Viking Times </h1>
 <body>
-<div class="flex-col mb-4">
+<div class="flex content-start flex-wrap content-center mb-4 mt-5">
 <% @articles.each do |article|%>
     <%=  link_to(article_path(article)) do %>
-        <div class="wrap">
-        <div class="tile"> 
-            <img src='https://raw.githubusercontent.com/AnthonyPAlicea/velocity-articleintros/master/img/fields-ocean.jpg'/>
-            <div class="text">
-            <h1><%= article.title %></h1>
-            <p class="animate-text"><%= article.lead %></p>
-            <div class="dots">
-            <span></span>
-            <span></span>
-            <span></span>
+        <div class="max-w-sm rounded overflow-hidden shadow-lg">
+        <div class="px-6 py-4">
+        <div class="font-bold text-xl mb-2">
+        <%= article.title %>
         </div>
-    </div>
-    </div>
-    </div>
+        <p class="text-grey-darker text-base">
+        <%= article.lead %>
+        </p>
+        </div>
+        <div class="px-6 py-4">
+        </div>
+        </div>
     <% end %>
 <% end %>
+</div>
 </div>
 </body>
