@@ -5,7 +5,7 @@ Feature: Visitor can read a specific article
     I would like to be able to click on an article and have it displayed
 
     Background: 
-    Given the following articles exist
+        Given the following articles exist
         |  title                            |  lead                      |  content                                           |  
         |  Voted best mead recipe           |  Restaurant wins prize     |  Restaurant wins prize for best mead in Sweden     |
         |  Ancient viking grave discovered  |  Kids came across sword    |  Kids come across sword protruding from the earth  |
