@@ -8,7 +8,7 @@
 
 <% @articles.each do |article| %>
     <p>
-    <%= link_to(article_path(article)) do %>
+    <%= link_to article_path(article) do %>
         <%= article.title %>
         <%= article.lead %>
     <% end %>

@@ -4,11 +4,11 @@ class ArticlesController < ApplicationController
     before_action :authenticate_user!, only: [:create, :new]
     def index
         @categories = Category.all
-            if params[:category].present?
-                @articles = Category.find_by(name: params[:category]).articles
-            else
-                @articles = Article.all
-            end
+        if params[:category].present?
+            @articles = Category.find_by(name: params[:category]).articles
+        else
+            @articles = Article.all
+        end
     end
 
     def new   
