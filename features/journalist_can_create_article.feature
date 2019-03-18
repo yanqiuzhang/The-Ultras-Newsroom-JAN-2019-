@@ -24,7 +24,6 @@ Feature: Journalist can create articles
         And I fill in "Title" with "Vikings living amongst us"
         And I fill in "Lead" with "Hurra"
         And I click "Save Article"      
-        # Then I should not see "Article was successfully created."
 
     Scenario: Visitor can't create article [Sad path]
         Given I am logged in as "alecia@craft.se"
