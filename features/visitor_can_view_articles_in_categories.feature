@@ -5,18 +5,18 @@ Feature: Visitor can view articles in categories
 
     Background:
         Given the following categories exist
-            | name                | 
-            | Breaking News | 
+            | name                  | 
+            | Breaking News         | 
             | Politics              | 
             | Sport                 | 
-            | Lifestyle            | 
-            | Health               | 
+            | Lifestyle             | 
+            | Health                | 
 
         Given the following articles exist
-            | title                                                            | lead                                  | content                                                                            | category             |
-            | Voted best mead recipe                            | Restaurant wins prize       | Restaurant wins prize for best mead in Sweden              | Lifestyle             |
-            | Ancient viking grave discovered                | Kids came across sword   | Kids come across sword protruding from the earth        | Breaking News  |
-            | Drinking wine improves general health     | Drink wine today!             | Studies show that wine is good for your heart                 | Health               |
+            | title                                     | lead                        | content                                                     | category     |
+            | Voted best mead recipe                    | Restaurant wins prize       | Restaurant wins prize for best mead in Sweden               | Lifestyle    |
+            | Ancient viking grave discovered           | Kids came across sword      | Kids come across sword protruding from the earth            | Breaking News|
+            | Drinking wine improves general health     | Drink wine today!           | Studies show that wine is good for your heart               | Health       |
 
     Scenario: A visitor can see and filter articles within a specific category
         When I visit the site
