@@ -1,10 +1,9 @@
 <h1> The Viking Times </h1>
 
-<%= link_to 'Breaking News', articles_path %>
-<%= link_to 'Politics', articles_path %>
-<%= link_to 'Sport', articles_path %>
-<%= link_to 'Lifestyle', articles_path %>
-<%= link_to 'Health', articles_path %>
+
+<% @categories.each do |category|%>
+    <%=  link_to category.name, articles_path(params: {category: category.name}) %>
+<% end %>
 
 <% @articles.each do |article|%>
     <%=  link_to(article_path(article)) do %>
@@ -12,9 +11,3 @@
         <%= article.lead %>
     <% end %>
 <% end %>
-
-<%# @categories.each do |category|%>
-    <%#=  link_to(article_path(category)) do %>
-        <%#= category.name %>
-        <%# end %>
-<%# end %>

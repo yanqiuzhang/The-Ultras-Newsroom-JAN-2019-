@@ -10,6 +10,7 @@ category_2 = Category.create(name: "Breaking News")
 category_3 = Category.create(name: "Politics")
 category_4 = Category.create(name: "Health")
 category_5 = Category.create(name: "Sport")
+category_6 = Category.create(name: "All")
 
 article_1 = Article.create(title: "Voted best mead recipe", lead: "Restaurant wins prize", content: "Restaurant wins prize for best mead in Sweden")
 article_2 = Article.create(title: "Ancient viking grave discovered", lead: "Kids came across sword", content: "Kids come across sword protruding from the earth")
@@ -22,10 +23,3 @@ article_2.categories << category_2
 article_3.categories << category_3
 article_4.categories << category_4
 article_5.categories << category_5
-
-
-
-
-
-
- 
