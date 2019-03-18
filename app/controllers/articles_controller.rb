@@ -15,10 +15,13 @@ class ArticlesController < ApplicationController
     end
 
     def create
-        @article = Article.new(article_params)
+        article = Article.new(article_params)
        
-        @article.save
-        redirect_to new_article_path, notice: 'Article was successfully created.'
+        if article.save
+            redirect_to new_article_path, notice: 'Article was successfully created.'
+        else
+            redirect_to new_article_path, alert: 'You have to fill out all the fields'
+        end
     end
        
     private

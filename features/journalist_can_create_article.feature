@@ -23,7 +23,8 @@ Feature: Journalist can create articles
         When I visit the journalist page
         And I fill in "Title" with "Vikings living amongst us"
         And I fill in "Lead" with "Hurra"
-        And I click "Save Article"      
+        And I click "Save Article"
+        Then I should see "You have to fill out all the fields"   
 
     Scenario: Visitor can't create article [Sad path]
         Given I am logged in as "alecia@craft.se"
