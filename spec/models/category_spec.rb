@@ -11,6 +11,10 @@ RSpec.describe Category, type: :model do
     it { is_expected.to validate_uniqueness_of :name }
   end
 
+  describe 'Associations' do
+    it { should have_and_belong_to_many(:articles) }
+  end
+
   describe 'Factory' do
     it 'should have valid Factory' do
         expect(FactoryBot.create(:category)).to be_valid 
