@@ -5,7 +5,8 @@ Feature: Visitor can choose language
     I would like to switch between languages English and Swedish
 
 Background: 
-    Given I visit the site
+    Given I am logged in as "alecia@craft.se"
+    And I visit the site
 
     Scenario: Visitor can change language to English
         When I click "English"
