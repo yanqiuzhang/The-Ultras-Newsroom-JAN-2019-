@@ -1,16 +1,33 @@
-<h1> The Viking Times </h1>
-
-<%= link_to 'All', articles_path %>
-
-<% @categories.each do |category| %>
-    <%= link_to category.name, articles_path(params: {category: category.name}) %>
-<% end %>
-
-<% @articles.each do |article| %>
-    <p>
-    <%= link_to article_path(article) do %>
-        <%= article.title %>
-        <%= article.lead %>
+<div class="border-b-2">
+  <h1> The Viking Times </h1>
+</div>
+<div class="flex justify-center pt-2 border-b-2 pb-2">
+  <ul class="list-reset flex">
+    <li class="mx-2">
+      <%= link_to 'All', articles_path %>
+    </li>
+    <% @categories.each do |category| %>
+      <li class="mx-2">
+        <%= link_to category.name, articles_path(params: {category: category.name}) %>
+      </li>
     <% end %>
-    </p>
-<% end %>
+  </ul>
+</div>
+<div class="article-grid">
+  <% @articles.each do |article|%>
+    <div id="<%= dom_id(article) %>">
+      <%=  link_to(article_path(article)) do %>
+        <div class="max-w-sm rounded overflow-hidden shadow-lg">
+          <div class="px-6 py-4">
+            <div class="font-bold text-xl mb-2">
+              <%= article.title %>
+            </div>
+            <p class="text-grey-darker text-base">
+              <%= article.lead %>
+            </p>
+          </div>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+</div>
