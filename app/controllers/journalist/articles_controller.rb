@@ -1,6 +1,10 @@
 class Journalist::ArticlesController < ApplicationController
-    before_action :check_journalist, only: [:create, :new]
-    before_action :authenticate_user!, only: [:create, :new]
+    before_action :check_journalist
+    before_action :authenticate_user!
+
+    def index
+        @articles = Article.all
+    end
 
     def new
         @articles = Article.all
