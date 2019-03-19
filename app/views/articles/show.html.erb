@@ -1,15 +1,15 @@
 <div class="article-show">
-<p>
-    <strong>Title:</strong>
-    <%= @article.title %>
-</p>
-<p>
-    <strong></strong>
+    <div class="title-show text-8xl uppercase mt-24 border-b-2">
+      <%= @article.title %>
+    </div>
+      <div class="lead font-bold mt-16">
     <%= @article.lead %>
-</p>
-<p>
-    <%= @article.content %>
-</p>
+  </div>
+  </div>
+  <div class="article-content ml-32 mr-32 mt-32 mb-32">
+    <p>
+      <%= @article.content %>
+    </p>
+  </div>
 </div>
-
 <%= link_to "Back", :back %>
