@@ -15,7 +15,7 @@
 </div>
 <div class="article-grid">
   <% @articles.each do |article|%>
-    <div id="#{dom_id(article)}">
+    <div id="<%= dom_id(article) %>">
       <%=  link_to(article_path(article)) do %>
         <div class="max-w-sm rounded overflow-hidden shadow-lg">
           <div class="px-6 py-4">

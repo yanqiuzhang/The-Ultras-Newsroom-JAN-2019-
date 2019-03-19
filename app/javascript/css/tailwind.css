@@ -12,7 +12,7 @@ h1 {
 }
 
 .back {
-    margin-left: 25px;
+    @apply ml-6;
 }
 
 .article-grid {
