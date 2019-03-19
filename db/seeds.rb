@@ -8,6 +8,21 @@
 
 User.create(email: "journalist@mail.se", password: "password", role: "journalist")
 User.create(email: "visitor@mail.se", password: "password", role: "visitor")
-Article.create(title: "per", lead: "per", content: "per", approved: false)
-Article.create(title: "per2", lead: "per2", content: "per2", approved: true)
-Article.create(title: "per3", lead: "per3", content: "per3", approved: true)
+
+category_1 = Category.create(name: "Lifestyle")
+category_2 = Category.create(name: "Breaking News")
+category_3 = Category.create(name: "Politics")
+category_4 = Category.create(name: "Health")
+category_5 = Category.create(name: "Sport")
+
+article_1 = Article.create(title: "Voted best mead recipe", lead: "Restaurant wins prize", content: "Restaurant wins prize for best mead in Sweden", approved: true)
+article_2 = Article.create(title: "Ancient viking grave discovered", lead: "Kids came across sword", content: "Kids come across sword protruding from the earth", approved: true)
+article_3 = Article.create(title: "New Prime Minister", lead: "Today is a new day", content: "The country is on a better path", approved: false)
+article_4 = Article.create(title: "Drinking wine improves general health", lead: "Drink wine today!", content: "Studies show that wine is good for your heart", approved: false)
+article_5 = Article.create(title: "Hammarby! Hammarby!", lead: "Best team ever!", content: "Home is where the heart is", approved: true)
+
+article_1.categories << category_1
+article_2.categories << category_2
+article_3.categories << category_3
+article_4.categories << category_4
+article_5.categories << category_5
