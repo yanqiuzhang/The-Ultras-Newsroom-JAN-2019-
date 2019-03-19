@@ -8,11 +8,9 @@ h1 {
     @apply text-center;
     @apply mt-8;
     @apply leading-loose;
+    
 }
-/* a {
-    display:block;
-    width: 25%;
-} */
+
 .back {
     margin-left: 25px;
 }
@@ -25,9 +23,3 @@ h1 {
     grid-column-gap: 50px;
     @apply justify-center mt-6;
 }
-
-/* .category-list {
-    @apply list-reset;
-    @apply flex;
-    @apply mr-6;
-}  */
