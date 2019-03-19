@@ -1,5 +1,7 @@
 class Journalist::ArticlesController < ApplicationController
-    
+    before_action :check_journalist, only: [:create, :new]
+    before_action :authenticate_user!, only: [:create, :new]
+
     def new
         @articles = Article.all
     end
@@ -40,6 +42,14 @@ class Journalist::ArticlesController < ApplicationController
     end
 
     private
+
+    def check_journalist
+        if user_signed_in? && current_user.journalist?
+            true
+        else
+            redirect_to root_path, notice: 'Permission denied.'
+        end
+    end
 
     def article_params
         params.require(:article).permit(:title, :content, :lead)
