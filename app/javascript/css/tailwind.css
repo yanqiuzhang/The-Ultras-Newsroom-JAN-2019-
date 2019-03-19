@@ -8,7 +8,6 @@ h1 {
     @apply text-center;
     @apply mt-8;
     @apply leading-loose;
-    text-decoration: underline;
 }
 /* a {
     display:block;
@@ -20,7 +19,11 @@ h1 {
 
 .article-grid {
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: 300px 300px 300px;
+    grid-template-rows: 150px 150px;
+    grid-row-gap: 30px;
+    grid-column-gap: 50px;
+    @apply justify-center mt-6;
 }
 
 /* .category-list {
