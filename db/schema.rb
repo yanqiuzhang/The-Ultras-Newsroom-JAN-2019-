@@ -21,7 +21,7 @@ ActiveRecord::Schema.define(version: 2019_03_19_125409) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "lead"
-    t.boolean "approved"
+    t.boolean "approved", default: false
   end
 
   create_table "articles_categories", id: false, force: :cascade do |t|

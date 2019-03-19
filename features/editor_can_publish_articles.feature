@@ -19,10 +19,10 @@ Feature: Editor can publish articles
             | Health                | 
 
         Given the following articles exist
-            | title                                     | lead                        | content                                                     | category     |
-            | Voted best mead recipe                    | Restaurant wins prize       | Restaurant wins prize for best mead in Sweden               | Lifestyle    |
-            | Ancient viking grave discovered           | Kids came across sword      | Kids come across sword protruding from the earth            | Breaking News|
-            | Drinking wine improves general health     | Drink wine today!           | Studies show that wine is good for your heart               | Health       |
+            | title                                     | lead                        | content                                                     | category     |        approved     |
+            | Voted best mead recipe                    | Restaurant wins prize       | Restaurant wins prize for best mead in Sweden               | Lifestyle    |        false     |
+            | Ancient viking grave discovered           | Kids came across sword      | Kids come across sword protruding from the earth            | Breaking News|        true     |
+            | Drinking wine improves general health     | Drink wine today!           | Studies show that wine is good for your heart               | Health       |        true     |
 
     Scenario: Editor can publish articles
         Given I visit the editor page
@@ -30,4 +30,4 @@ Feature: Editor can publish articles
         And I click "Voted best mead recipe"
         And I should see "Publish"
         And I click "Publish"
-        
+        Then I should see "Article was successfully published."

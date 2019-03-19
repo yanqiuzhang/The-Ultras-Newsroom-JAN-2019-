@@ -7,7 +7,7 @@ When("I visit the journalist page") do
 end
 
 Given("I visit the editor page") do
-    visit new_editor_article_path
+    visit editor_articles_path
 end  
 
 Given("the following articles exist") do |table|

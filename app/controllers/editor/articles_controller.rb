@@ -1,8 +1,8 @@
 class Editor::ArticlesController < ApplicationController
-    before_action :check_editor, only: [:create, :new]
-    before_action :authenticate_user!, only: [:create, :new]
+    before_action :check_editor
+    before_action :authenticate_user!
 
-    def new
+    def index
         @articles = Article.all
     end
 
@@ -10,37 +10,14 @@ class Editor::ArticlesController < ApplicationController
         @article = Article.find(params[:id])
     end
 
-    def create
-        @article = Article.new(article_params)
-
-        if @article.save
-            redirect_to new_editor_article_path, notice: 'Article was successfully created.'
-        else
-            redirect_to new_editor_article_path, alert: 'You have to fill out all the fields'
-        end
-    end
-
-    def edit
-        @article = Article.find(params[:id])
-    end
-
     def update
         @article = Article.find(params[:id])
-        if params[:approved] == "true" 
+        if @article.approved == false 
             @article.update_attributes(approved: true)
-            redirect_to new_editor_article_path, notice: 'Article was successfully published.'
+            redirect_to editor_articles_path, notice: 'Article was successfully published.'
         else 
-         if params[:approved] == true
-            redirect_to new_editor_article_path, notice: 'Article was not successfully published.'
+            redirect_to editor_articles_path, notice: 'Article has already been published.'
          end
-        end
-    end
-
-    def destroy
-        @article = Article.find(params[:id])
-        @article.destroy
-
-        redirect_to new_editor_article_path, notice: 'Article was successfully deleted.'
     end
 
     private
