@@ -26,11 +26,10 @@ class Editor::ArticlesController < ApplicationController
 
     def update
         @article = Article.find(params[:id])
-
-        if @article.update(article_params)
-            redirect_to editor_article_path, notice: 'Article was successfully updated.'
-        else
-            redirect_to @article, notice: 'Article was not updated.'
+        if params[:approved] == "true"  
+            @article.update_attributes(:approved, true)
+        else 
+            redirect_to new_editor_article_path
         end
     end
 
@@ -52,6 +51,6 @@ class Editor::ArticlesController < ApplicationController
     end
 
     def article_params
-        params.require(:article).permit(:title, :content, :lead)
+        params.require(:article).permit(:title, :content, :lead, :approved)
     end 
 end

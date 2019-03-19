@@ -28,6 +28,5 @@ Feature: Editor can publish articles
         Given I visit the editor page
         Then I should see "Voted best mead recipe"
         And I click "Voted best mead recipe"
-        Then I should see "Edit"
-        And I click "Edit"
+        And I should see "Publish"
         And I click "Publish"

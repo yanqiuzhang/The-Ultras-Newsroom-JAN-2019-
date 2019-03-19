@@ -7,7 +7,7 @@ class ArticlesController < ApplicationController
         if params[:category].present?
             @articles = Category.find_by(name: params[:category]).articles
         else
-            @articles = Article.all
+            @articles = Article.approved
         end
     end
 

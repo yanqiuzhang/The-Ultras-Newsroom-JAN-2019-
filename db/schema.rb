@@ -21,9 +21,7 @@ ActiveRecord::Schema.define(version: 2019_03_19_125409) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "lead"
-    t.bigint "user_id"
     t.boolean "approved"
-    t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
   create_table "articles_categories", id: false, force: :cascade do |t|
@@ -48,12 +46,8 @@ ActiveRecord::Schema.define(version: 2019_03_19_125409) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "role"
-    t.bigint "article_id"
-    t.index ["article_id"], name: "index_users_on_article_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
-  add_foreign_key "articles", "users"
-  add_foreign_key "users", "articles"
 end
