@@ -6,6 +6,10 @@ When("I visit the journalist page") do
     visit new_article_path
 end
 
+Given("I visit the editor page") do
+    visit new_editor_article_path
+end  
+
 Given("the following articles exist") do |table|
     table.hashes.each do |article|
         category = Category.find_or_create_by(name: article[:category])

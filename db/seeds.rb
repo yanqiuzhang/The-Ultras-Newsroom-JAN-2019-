@@ -1,3 +1,5 @@
+User.create(email: "editor@mail.se", password: "password", role: "editor")
+
 category_1 = Category.create(name: "Lifestyle")
 category_2 = Category.create(name: "Breaking News")
 category_3 = Category.create(name: "Politics")

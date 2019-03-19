@@ -1,0 +1,16 @@
+<p>
+    <strong>Title:</strong>
+    <%= @article.title %>
+</p>
+
+<p>
+    <strong>Lead:</strong>
+    <%= @article.lead %>
+</p>
+
+<p>
+    <strong>Text:</strong>
+    <%= @article.content %>
+</p>
+<%= link_to "Edit", edit_editor_article_path %>
+<%= link_to "Back", new_editor_article_path %> 
