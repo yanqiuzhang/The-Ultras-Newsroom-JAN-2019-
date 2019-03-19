@@ -3,17 +3,28 @@
 @tailwind utilities;
 
 h1 {
-    @apply font-serif;
+    font-family: 'Over the Rainbow', cursive;
     @apply text-5xl; 
     @apply text-center;
     @apply mt-8;
     @apply leading-loose;
     text-decoration: underline;
 }
-a {
+/* a {
     display:block;
     width: 25%;
-}
+} */
 .back {
     margin-left: 25px;
 }
+
+.article-grid {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+/* .category-list {
+    @apply list-reset;
+    @apply flex;
+    @apply mr-6;
+}  */
