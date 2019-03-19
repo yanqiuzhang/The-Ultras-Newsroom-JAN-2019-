@@ -26,10 +26,13 @@ class Editor::ArticlesController < ApplicationController
 
     def update
         @article = Article.find(params[:id])
-        if params[:approved] == "true"  
-            @article.update_attributes(:approved, true)
+        if params[:approved] == "true" 
+            @article.update_attributes(approved: true)
+            redirect_to new_editor_article_path, notice: 'Article was successfully published.'
         else 
-            redirect_to new_editor_article_path
+         if params[:approved] == true
+            redirect_to new_editor_article_path, notice: 'Article was not successfully published.'
+         end
         end
     end
 

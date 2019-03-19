@@ -14,4 +14,4 @@
 </p>
 <%= link_to "Edit", edit_editor_article_path %>
 <%= link_to "Back", new_editor_article_path %> 
-<%= link_to "Publish", editor_article_path(@article), method: :patch  %>
+<%= link_to "Publish", editor_article_path(@article, approved: true), method: :patch  %>

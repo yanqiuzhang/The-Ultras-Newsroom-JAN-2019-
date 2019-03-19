@@ -30,3 +30,4 @@ Feature: Editor can publish articles
         And I click "Voted best mead recipe"
         And I should see "Publish"
         And I click "Publish"
+        

@@ -5,7 +5,7 @@ class ArticlesController < ApplicationController
     def index
         @categories = Category.all
         if params[:category].present?
-            @articles = Category.find_by(name: params[:category]).articles
+            @articles = Category.find_by(name: params[:category]).articles.where(approved: true)
         else
             @articles = Article.approved
         end
