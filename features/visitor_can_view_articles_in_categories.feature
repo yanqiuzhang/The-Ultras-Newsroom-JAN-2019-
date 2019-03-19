@@ -4,14 +4,6 @@ Feature: Visitor can view articles in categories
     I would like to be able to filter the articles displayed in categories
 
     Background:
-        Given the following categories exist
-            | name                  | 
-            | Breaking News         | 
-            | Politics              | 
-            | Sport                 | 
-            | Lifestyle             | 
-            | Health                | 
-
         Given the following articles exist
             | title                                     | lead                        | content                                                     | category     |
             | Voted best mead recipe                    | Restaurant wins prize       | Restaurant wins prize for best mead in Sweden               | Lifestyle    |
@@ -21,8 +13,6 @@ Feature: Visitor can view articles in categories
     Scenario: A visitor can see and filter articles within a specific category
         When I visit the site
         Then I should see "Breaking News"
-        And I should see "Politics"
-        And I should see "Sport"
         And I should see "Lifestyle"
         And I should see "Health"
         When I click "Breaking News" 

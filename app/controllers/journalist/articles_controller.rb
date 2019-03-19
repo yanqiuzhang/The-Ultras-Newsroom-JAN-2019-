@@ -41,8 +41,8 @@ class Journalist::ArticlesController < ApplicationController
     def destroy
         @article = Article.find(params[:id])
         @article.destroy
-       
-        redirect_to new_journalist_article_path, notice: 'Article was successfully deleted.'
+        
+        redirect_to journalist_articles_path, notice: 'Article was successfully deleted.'
     end
 
     private

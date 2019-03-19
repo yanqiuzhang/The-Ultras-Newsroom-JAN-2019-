@@ -5,14 +5,6 @@ Feature: List articles on the landing page
     I would like to be able to see the articles listed on a page
 
     Background: 
-        Given the following categories exist
-            | name                  | 
-            | Breaking News         | 
-            | Politics              | 
-            | Sport                 | 
-            | Lifestyle             | 
-            | Health                | 
-
         Given the following articles exist
             | title                                     | lead                        | content                                                     | category     |
             | Voted best mead recipe                    | Restaurant wins prize       | Restaurant wins prize for best mead in Sweden               | Lifestyle    |

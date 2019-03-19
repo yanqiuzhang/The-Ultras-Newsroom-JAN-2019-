@@ -5,14 +5,6 @@ Feature: Visitor can read a specific article
     I would like to be able to click on an article and have it displayed
 
     Background: 
-        Given the following categories exist
-            | name                  | 
-            | Breaking News         | 
-            | Politics              | 
-            | Sport                 | 
-            | Lifestyle             | 
-            | Health                | 
-
         Given the following articles exist
             | title                                     | lead                        | content                                                     | category     |
             | Voted best mead recipe                    | Restaurant wins prize       | Restaurant wins prize for best mead in Sweden               | Lifestyle    |
