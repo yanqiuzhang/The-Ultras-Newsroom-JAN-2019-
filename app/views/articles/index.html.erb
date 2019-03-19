@@ -6,17 +6,16 @@
         <div class="max-w-sm rounded overflow-hidden shadow-lg">
         <div class="px-6 py-4">
         <div class="font-bold text-xl mb-2">
-        <%= article.title %>
-        </div>
-        <p class="text-grey-darker text-base">
-        <%= article.lead %>
-        </p>
-        </div>
-        <div class="px-6 py-4">
-        </div>
-        </div>
+
+<%= link_to 'All', articles_path %>
+
+<% @categories.each do |category| %>
+    <%= link_to category.name, articles_path(params: {category: category.name}) %>
+<% end %>
+
+    </div>
+    </div>
+    </body>
+    </p>
     <% end %>
 <% end %>
-</div>
-</div>
-</body>
