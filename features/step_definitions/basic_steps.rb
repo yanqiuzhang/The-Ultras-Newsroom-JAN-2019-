@@ -3,7 +3,7 @@ When("I visit the site") do
 end
 
 When("I visit the journalist page") do
-    visit new_article_path
+    visit new_journalist_article_path
 end
 
 Given("the following articles exist") do |table|
@@ -29,4 +29,8 @@ end
 
 When("I click {string}") do |element|
     click_on element
+end
+
+And("I click the popup") do
+    page.driver.browser.switch_to.alert.accept
 end
