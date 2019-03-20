@@ -7,6 +7,5 @@ Then("I should not see {string}") do |content|
 end  
 
 Then("I should be on the landing page") do
-    visit root_path
+    expect(current_path).to eq root_path
 end
-  

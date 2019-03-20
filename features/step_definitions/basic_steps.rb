@@ -2,16 +2,13 @@ When("I visit the site") do
     visit root_path
 end
 
-When("I visit the journalist page") do
-    visit journalist_articles_path
-end
-
-When("I visit the journalist create article page") do
-    visit new_journalist_article_path
+When("I visit the {string} page") do |path|
+    visit path
 end
   
 Given("the following articles exist") do |table|
     table.hashes.each do |article|
+        id = 
         category = Category.find_or_create_by(name: article[:category])
         article.except!("category")
         new_article = create(:article, article)

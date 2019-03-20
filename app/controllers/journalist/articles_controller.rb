@@ -1,6 +1,9 @@
 class Journalist::ArticlesController < ApplicationController
     before_action :check_journalist
     before_action :authenticate_user!
+    def index
+        @articles = Article.all.where(user_id: current_user.id)
+    end
 
     def show
         @article = Article.find(params[:id])
