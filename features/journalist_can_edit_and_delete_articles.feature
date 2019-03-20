@@ -7,8 +7,8 @@ Feature: Journalist can edit and delete articles
     
     Background: 
         Given the following articles exist
-            | title                                     | lead                        | content                                                     | category     |
-            | Voted best mead recipe                    | Restaurant wins prize       | Restaurant wins prize for best mead in Sweden               | Lifestyle    |
+            | title                                     | lead                        | content                                                     | category     | journalist
+            | Voted best mead recipe                    | Restaurant wins prize       | Restaurant wins prize for best mead in Sweden               | Lifestyle    | journalist@mail.se
             | Ancient viking grave discovered           | Kids came across sword      | Kids come across sword protruding from the earth            | Breaking News|
             | Drinking wine improves general health     | Drink wine today!           | Studies show that wine is good for your heart               | Health       |
 

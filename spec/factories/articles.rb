@@ -3,5 +3,6 @@ FactoryBot.define do
     title   { "MyString" }
     lead    { "MyText" }
     content { "MyText" }
+    user
   end
 end
