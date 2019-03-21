@@ -3,6 +3,7 @@ class ArticlesController < ApplicationController
     before_action :check_journalist, only: [:create, :new]
     before_action :check_subscriber, only: [:show]
     before_action :authenticate_user!, only: [:create, :new]
+    
     def index
         @categories = Category.all
         if params[:category].present?
