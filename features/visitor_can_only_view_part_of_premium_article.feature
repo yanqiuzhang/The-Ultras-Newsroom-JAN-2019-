@@ -7,15 +7,15 @@ Feature: Visitor can only view part of premium article
     Background:
         Given the following articles exist
             | title                                 | lead                   | content                                          | category      | premium |
-            | Voted best mead recipe                | Restaurant wins prize  | Restaurant wins prize for best mead in Sweden    | Lifestyle     | Yes     |
-            | Ancient viking grave discovered       | Kids came across sword | Kids come across sword protruding from the earth | Breaking News | No      |
-            | Drinking wine improves general health | Drink wine today!      | Studies show that wine is good for your heart    | Health        | No      |
+            | Voted best mead recipe                | Restaurant wins prize  | Restaurant wins prize for best mead in Sweden    | Lifestyle     | true     |
+            | Ancient viking grave discovered       | Kids came across sword | Kids come across sword protruding from the earth | Breaking News | false      |
 
-
-    Scenario: Visitor clicks on premium content and get redirected to subscription page
+    Scenario: Visitor clicks on premium content and gets notice to subscribe
         When I visit the site
         Then I should see "Voted best mead recipe"
         And I should see "Ancient viking grave discovered"
-        And I should see "Drinking wine improves general health"
         And I click "Voted best mead recipe"
-        Then I should be on the "subscription" page
+        Then I should see "To read this premium article, you need to become a subscriber."
+        But when I click "Ancient viking grave discovered"
+        Then I should see "Kids come across sword protruding from the earth"
+        

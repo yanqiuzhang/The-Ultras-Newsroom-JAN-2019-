@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 2019_03_21_094555) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "lead"
+    t.boolean "approved", default: false
     t.bigint "user_id"
     t.boolean "premium", default: false
     t.index ["user_id"], name: "index_articles_on_user_id"
