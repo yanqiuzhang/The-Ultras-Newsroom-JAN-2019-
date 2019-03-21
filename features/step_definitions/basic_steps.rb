@@ -2,8 +2,9 @@ When("I visit the site") do
     visit root_path
 end
 
-When("I visit the {string} page") do |path|
-    visit path
+When("I visit the {string} page") do |title|
+    article = Article.find_by_title(title)
+    visit journalist_article_path(article)
 end
   
 Given("the following articles exist") do |table|
