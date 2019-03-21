@@ -8,7 +8,7 @@ When("I visit the {string} page") do |title|
 end
 
 When("I visit the journalist new article page") do
-    visit journalist_new_article_path
+    visit new_journalist_article_path
 end
 
 Given("the following articles exist") do |table|

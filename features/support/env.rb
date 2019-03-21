@@ -14,7 +14,7 @@ end
 
  Cucumber::Rails::Database.javascript_strategy = :truncation
 
- Chromedriver.set_version '2.33'
+ Chromedriver.set_version '2.42'
 
 Capybara.register_driver :selenium do |app|
   options = Selenium::WebDriver::Chrome::Options.new(
