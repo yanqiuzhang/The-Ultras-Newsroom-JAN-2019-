@@ -11,8 +11,6 @@ class Journalist::ArticlesController < ApplicationController
     end
 
     def update
-        @article = Article.find(params[:id])
-       
         if @article.update(article_params)
             redirect_to journalist_article_path, notice: 'Article was successfully updated.'
         else
@@ -21,7 +19,6 @@ class Journalist::ArticlesController < ApplicationController
     end
 
     def destroy
-        @article = Article.find(params[:id])
         if @article.destroy
             redirect_to articles_path, notice: 'Article was successfully deleted.'
         else
@@ -44,7 +41,7 @@ class Journalist::ArticlesController < ApplicationController
         if @article.user == current_user
             true
         else 
-            redirect_to journalist_articles_path, notice: "You can only edit your own articles."
+            redirect_to articles_path, notice: "You can only edit your own articles."
         end
     end
 
