@@ -2,12 +2,15 @@ When("I visit the site") do
     visit root_path
 end
 
-When("I visit the journalist page") do
-    visit new_article_path
+When("I visit the {string} page") do |title|
+    article = Article.find_by_title(title)
+    visit journalist_article_path(article)
 end
-
+  
 Given("the following articles exist") do |table|
     table.hashes.each do |article|
+        user = User.find_by(email: article[:user])
+        article["user"] = user
         category = Category.find_or_create_by(name: article[:category])
         article.except!("category")
         new_article = create(:article, article)
@@ -38,4 +41,8 @@ end
 
 When("I click {string}") do |element|
     click_on element
+end
+
+And("I click the popup") do
+    page.driver.browser.switch_to.alert.accept
 end
