@@ -3,5 +3,6 @@ FactoryBot.define do
     title   { "MyString" }
     lead    { "MyText" }
     content { "MyText" }
+    premium { "boolean" }
   end
 end
