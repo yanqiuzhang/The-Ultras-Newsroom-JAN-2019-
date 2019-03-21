@@ -20,6 +20,7 @@ RSpec.describe Article, type: :model do
 
     describe 'Associations' do
         it { should have_and_belong_to_many(:categories) }
+        it { should belong_to(:user) }
     end
 
     describe 'Factory' do

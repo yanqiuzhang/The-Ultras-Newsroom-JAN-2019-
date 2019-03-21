@@ -4,5 +4,6 @@ FactoryBot.define do
     lead    { "MyText" }
     content { "MyText" }
     premium { false }
+    user
   end
 end
