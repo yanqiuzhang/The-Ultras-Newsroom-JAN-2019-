@@ -10,7 +10,7 @@ h1 {
     @apply leading-loose;
 }
 
-.article-show{
+.article-show {
     @apply text-center;
 }
 
@@ -24,11 +24,9 @@ h1 {
     grid-template-rows: 150px 150px;
     grid-row-gap: 30px;
     grid-column-gap: 50px;
-    @apply justify-center;
-    @apply  mt-6;
+    @apply justify-center mt-6;
 }
 
 body {
-    background-color: #f4f4f4;
-    font-family: 'Crimson Text', serif;
+    @apply bg-white font-serif;
 }
