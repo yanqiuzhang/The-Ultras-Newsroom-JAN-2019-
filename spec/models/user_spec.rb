@@ -13,6 +13,10 @@ RSpec.describe User, type: :model do
         it { is_expected.to validate_presence_of :password } 
     end
 
+    describe 'Associations' do
+        it { should have_many(:articles) }
+      end
+
     describe 'Factory' do
         it 'should have valid Factory' do
             expect(FactoryBot.create(:user)).to be_valid 

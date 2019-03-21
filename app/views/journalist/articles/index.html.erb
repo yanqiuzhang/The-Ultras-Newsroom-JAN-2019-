@@ -1,0 +1,8 @@
+<% @articles.each do |article| %>
+    <p>
+    <%= link_to journalist_article_path(article) do %>
+        <%= article.title %>
+        <%= article.lead %>
+    <% end %>
+    </p>
+<% end %>
