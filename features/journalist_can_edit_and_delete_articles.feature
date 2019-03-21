@@ -18,8 +18,7 @@ Feature: Journalist can edit and delete articles
             | Drinking wine improves general health     | Drink wine today!           | Studies show that wine is good for your heart               | Health       |   jocke@craft.se    |
 
         And I am logged in as "jocke@craft.se"
-        And I visit the "/journalist/articles/1/" page
-        Then I should see "Voted best mead recipe"
+        And I visit the "Voted best mead recipe" page
         And I click "Edit"
 
     Scenario: Journalist can edit articles
