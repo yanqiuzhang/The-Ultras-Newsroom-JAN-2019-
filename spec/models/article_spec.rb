@@ -13,6 +13,9 @@ RSpec.describe Article, type: :model do
         it { is_expected.to validate_presence_of :title }
         it { is_expected.to validate_presence_of :lead } 
         it { is_expected.to validate_presence_of :content }
+        it { should_not allow_value(nil).for(:premium) }
+        it { should allow_value(true).for(:premium) }
+        it { should allow_value(false).for(:premium) }
     end
 
     describe 'Associations' do
