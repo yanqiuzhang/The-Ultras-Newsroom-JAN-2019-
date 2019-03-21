@@ -30,3 +30,15 @@ h1 {
 body {
     @apply bg-white font-serif;
 }
+
+.title-show {
+    @apply text-8xl uppercase mt-24 border-b-2;
+}
+
+.lead {
+    @apply font-bold mt-16 text-2xl;
+}
+
+.article-content {
+    @apply m-32 text-2xl;
+}
