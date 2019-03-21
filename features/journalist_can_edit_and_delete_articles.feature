@@ -8,14 +8,14 @@ Feature: Journalist can edit and delete articles
     Background: 
 
         Given the following users exist
-            | email          | password | role       | id |
-            | jocke@craft.se | password | journalist | 1  |
+            | email          | password | role       |
+            | jocke@craft.se | password | journalist | 
 
         And the following articles exist
-            | title                                     | lead                        | content                                                     | category     | user_id | id |
-            | Voted best mead recipe                    | Restaurant wins prize       | Restaurant wins prize for best mead in Sweden               | Lifestyle    |    1    | 1  |
-            | Ancient viking grave discovered           | Kids came across sword      | Kids come across sword protruding from the earth            | Breaking News|    1    | 2  |
-            | Drinking wine improves general health     | Drink wine today!           | Studies show that wine is good for your heart               | Health       |    1    | 3  |
+            | title                                     | lead                        | content                                                     | category     | user |
+            | Voted best mead recipe                    | Restaurant wins prize       | Restaurant wins prize for best mead in Sweden               | Lifestyle    |   jocke@craft.se    |
+            | Ancient viking grave discovered           | Kids came across sword      | Kids come across sword protruding from the earth            | Breaking News|   jocke@craft.se    |
+            | Drinking wine improves general health     | Drink wine today!           | Studies show that wine is good for your heart               | Health       |   jocke@craft.se    |
 
         And I am logged in as "jocke@craft.se"
         And I visit the "/journalist/articles/1/" page
