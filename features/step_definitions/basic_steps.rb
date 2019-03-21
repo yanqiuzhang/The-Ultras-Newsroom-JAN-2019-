@@ -8,7 +8,8 @@ end
   
 Given("the following articles exist") do |table|
     table.hashes.each do |article|
-        id = 
+        user = User.find_by(email: article[:user])
+        article["user"] = user
         category = Category.find_or_create_by(name: article[:category])
         article.except!("category")
         new_article = create(:article, article)
