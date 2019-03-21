@@ -6,7 +6,15 @@ When("I visit the {string} page") do |title|
     article = Article.find_by_title(title)
     visit journalist_article_path(article)
 end
+<<<<<<< HEAD
   
+=======
+
+Given("I visit the editor page") do
+    visit editor_articles_path
+end  
+
+>>>>>>> 93745aad572c4568fcd5691050732e747a749ddb
 Given("the following articles exist") do |table|
     table.hashes.each do |article|
         user = User.find_by(email: article[:user])

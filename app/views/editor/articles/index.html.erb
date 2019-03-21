@@ -1,0 +1,8 @@
+<% @articles.each do |article|%>
+    <%=  link_to(editor_article_path(article)) do %>
+        <%= article.title %>
+        <%= article.lead %>
+    <% end %>
+<% end %>
+
+<%= link_to ('Home'), root_path %> 
