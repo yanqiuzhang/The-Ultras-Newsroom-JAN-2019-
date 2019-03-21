@@ -22,8 +22,8 @@ ActiveRecord::Schema.define(version: 2019_03_19_125409) do
     t.datetime "updated_at", null: false
     t.text "lead"
     t.bigint "user_id"
-    t.index ["user_id"], name: "index_articles_on_user_id"
     t.boolean "approved", default: false
+    t.index ["user_id"], name: "index_articles_on_user_id"
   end
 
   create_table "articles_categories", id: false, force: :cascade do |t|

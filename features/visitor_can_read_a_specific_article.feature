@@ -8,6 +8,7 @@ Feature: Visitor can read a specific article
         Given the following users exist
             | email          | password | role       |
             | jocke@craft.se | password | journalist |
+            | per@mail.se    | password | journalist |
 
         And the following articles exist
             | title                                 | lead                   | content                                          | category      | user           | approved |

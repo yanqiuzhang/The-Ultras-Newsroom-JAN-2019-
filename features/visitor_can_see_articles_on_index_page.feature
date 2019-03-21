@@ -7,7 +7,8 @@ Feature: List articles on the landing page
     Background: 
         Given the following users exist
             | email          | password | role       |
-            | jocke@craft.se | password | journalist | 
+            | jocke@craft.se | password | journalist |
+            | per@mail.se    | password | journalist |
 
         And the following articles exist
             | title                                 | lead                   | content                                          | category      | user           | approved |

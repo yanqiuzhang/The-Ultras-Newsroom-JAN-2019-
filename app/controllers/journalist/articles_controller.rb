@@ -8,6 +8,7 @@ class Journalist::ArticlesController < ApplicationController
     end
     
     def edit
+        @article = Article.find(params[:id])
     end
 
     def update
@@ -19,6 +20,8 @@ class Journalist::ArticlesController < ApplicationController
     end
 
     def destroy
+        @article = Article.find(params[:id])
+
         if @article.destroy
             redirect_to articles_path, notice: 'Article was successfully deleted.'
         else

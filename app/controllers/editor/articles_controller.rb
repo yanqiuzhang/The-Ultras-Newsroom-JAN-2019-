@@ -29,8 +29,4 @@ class Editor::ArticlesController < ApplicationController
             redirect_to root_path, notice: 'Permission denied.'
         end
     end
-
-    def article_params
-        params.require(:article).permit(:title, :content, :lead, :approved)
-    end 
 end

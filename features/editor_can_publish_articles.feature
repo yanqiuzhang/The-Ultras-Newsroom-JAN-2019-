@@ -7,23 +7,17 @@ Feature: Editor can publish articles
     Background:
         Given the following users exist
             | email          | password | role       |
-            | editor@mail.se | password | editor |
-        And I am logged in as "editor@mail.se"
+            | jocke@craft.se | password | journalist |
+            | per@mail.se    | password | editor |
 
-        Given the following categories exist
-            | name                  | 
-            | Breaking News         | 
-            | Politics              | 
-            | Sport                 | 
-            | Lifestyle             | 
-            | Health                | 
+        And I am logged in as "per@mail.se"
 
-        Given the following articles exist
-            | title                                     | lead                        | content                                                     | category     |        approved     |
-            | Voted best mead recipe                    | Restaurant wins prize       | Restaurant wins prize for best mead in Sweden               | Lifestyle    |        false     |
-            | Ancient viking grave discovered           | Kids came across sword      | Kids come across sword protruding from the earth            | Breaking News|        true     |
-            | Drinking wine improves general health     | Drink wine today!           | Studies show that wine is good for your heart               | Health       |        true     |
-
+        And the following articles exist
+            | title                                 | lead                   | content                                          | category      | user           | approved |
+            | Voted best mead recipe                | Restaurant wins prize  | Restaurant wins prize for best mead in Sweden    | Lifestyle     | jocke@craft.se | false     |
+            | Ancient viking grave discovered       | Kids came across sword | Kids come across sword protruding from the earth | Breaking News | jocke@craft.se | true     |
+            | Drinking wine improves general health | Drink wine today!      | Studies show that wine is good for your heart    | Health        | jocke@craft.se | true     |
+    
     Scenario: Editor can publish articles
         Given I visit the editor page
         Then I should see "Voted best mead recipe"
@@ -31,3 +25,10 @@ Feature: Editor can publish articles
         And I should see "Publish"
         And I click "Publish"
         Then I should see "Article was successfully published."
+    
+    Scenario: Editor can't publish published articles [sad path]
+        Given I visit the editor page
+        Then I should see "Ancient viking grave discovered"
+        And I click "Ancient viking grave discovered"
+        Then I should not see "Publish"
+
