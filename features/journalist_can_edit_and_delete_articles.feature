@@ -36,7 +36,7 @@ Feature: Journalist can edit and delete articles
     @javascript
     Scenario: Journalist can delete articles
         When I click "Edit"
-        And wait for 4 seconds
+        And wait for 8 seconds
         And I should see "Delete"
         And I click "Delete"
         And I click the popup
