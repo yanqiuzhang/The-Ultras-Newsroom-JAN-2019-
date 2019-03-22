@@ -1,8 +1,8 @@
-Feature: Journalist can edit and delete articles
+Feature: Journalist can add image
 
-    As a Journalist,
-    In order to change articles I have already written
-    I would like to be able to edit and delete articles
+    As a journalist
+    In order to make my articles more visually appealing
+    I would like to be able to upload and display images to my articles
 
 
     Background:
@@ -10,7 +10,6 @@ Feature: Journalist can edit and delete articles
         Given the following users exist
             | email          | password | role       |
             | jocke@craft.se | password | journalist |
-            | per@mail.se    | password | journalist |
 
         And the following articles exist
             | title                                 | lead                   | content                                          | category      | user           |
@@ -21,22 +20,8 @@ Feature: Journalist can edit and delete articles
         And I am logged in as "jocke@craft.se"
         And I visit the "Voted best mead recipe" page
 
-    Scenario: Journalist can edit articles
+    Scenario: Journalist can add image
         When I click "Edit"
-        And I fill in "Title" with "Voted worst mead recipe"
+        And I click "Choose image"
         And I click "Update Article"
-        Then I should see "Article was successfully updated."
-
-    Scenario: Journalist can't edit other journalists articles
-        When I am logged in as "per@mail.se"
-        And I visit the "Voted best mead recipe" page
-        And I click "Edit"
-        Then I should see "You can only edit your own articles."
-
-    @javascript
-    Scenario: Journalist can delete articles
-        When I click "Edit"
-        And wait for 8 seconds
-        And I click "Delete"
-        And I click the popup
-        Then I should see "Article was successfully deleted."
+        Then I should see "image"

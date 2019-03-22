@@ -46,3 +46,7 @@ end
 And("I click the popup") do
     page.driver.browser.switch_to.alert.accept
 end
+
+When("wait for {int} seconds") do |int|
+    sleep int
+end
