@@ -12,5 +12,10 @@
     <strong>Text:</strong>
     <%= @article.content %>
 </p>
+
+<p>
+    <strong>Image:</strong>
+    <%= image_tag @article.image if @article.image.attached? %>
+</p>
 <%= link_to "Edit", edit_journalist_article_path %>
 <%= link_to "Back", journalist_articles_path %>

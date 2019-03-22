@@ -20,6 +20,9 @@
         <%= form.submit %>
     </p>
 
+    <p>
+        <%= form.file_field :image %>
+    </p>
     <p> 
         <%= link_to 'Delete', 
             journalist_article_path(@article), 
