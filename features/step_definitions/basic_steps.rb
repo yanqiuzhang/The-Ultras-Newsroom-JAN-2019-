@@ -6,7 +6,11 @@ When("I visit the {string} page") do |title|
     article = Article.find_by_title(title)
     visit journalist_article_path(article)
 end
-  
+
+When("I visit the journalist new article page") do
+    visit new_journalist_article_path
+end
+
 Given("the following articles exist") do |table|
     table.hashes.each do |article|
         user = User.find_by(email: article[:user])
@@ -45,4 +49,8 @@ end
 
 And("I click the popup") do
     page.driver.browser.switch_to.alert.accept
+end
+
+When("wait for {int} seconds") do |int|
+    sleep int
 end
