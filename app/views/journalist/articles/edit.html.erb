@@ -1,4 +1,4 @@
-<h1>Edit article</h1>
+<h1><%= t :editarticle, scope: 'titles' %></h1>
  
 <%= form_with model: @article, url: journalist_article_path(@article), local: true do |form| %>
     <p>
@@ -21,7 +21,7 @@
     </p>
 
     <p> 
-        <%= link_to 'Delete', 
+        <%= link_to t('delete', scope: 'links'), 
             journalist_article_path(@article), 
                 method: :delete,
                 data: { confirm: 'Are you sure?' } 
@@ -30,4 +30,4 @@
         
 <% end %>
  
-<%= link_to 'Back', :back %>
+<%= link_to t('back', scope: 'links'), :back %>
