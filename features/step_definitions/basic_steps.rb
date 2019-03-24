@@ -48,5 +48,5 @@ And("I click the popup") do
 end
 
 When("wait for {int} seconds") do |int|
-    sleep 2
+    sleep int
 end
