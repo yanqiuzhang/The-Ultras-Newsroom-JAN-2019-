@@ -56,7 +56,7 @@ When("wait for {int} seconds") do |int|
 end
 
 When('I fill in the payment form with valid cc credentials') do
-    stripe_frame = find("iframe[name='__privateStripeFrame4']")
+    stripe_frame = find("iframe[name='__privateStripeFrame5']")
     within_frame stripe_frame do
       card_field = find_field('cardnumber')
       exp_date_field = find_field('exp-date')

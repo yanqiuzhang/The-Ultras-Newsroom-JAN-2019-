@@ -1,3 +1,4 @@
+@javascript
 Feature: Visitor can buy a subscription
 
     As a user
@@ -13,7 +14,7 @@ Feature: Visitor can buy a subscription
     Scenario: Visitor can buy a subscription
         When I visit the site
         And I click "Subscribe"
-        And wait for 2 seconds
+        And wait for 3 seconds
         And I fill in the payment form with valid cc credentials
         And I click "Submit payment"
         Then I should see "You have successfully subscribed!"
