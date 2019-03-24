@@ -22,6 +22,11 @@ sv:
 
   helpers:
     submit:
-      create: "Skapa Artikeln"
-      submit: "Spara Artikeln"
-      update: "Uppdatera Artikeln"
+      create: Skapa Artikeln
+      submit: Spara Artikeln
+      update: Uppdatera Artikeln
+  
+  form_with:
+    :title: Titel
+    :lead: Ingress
+    :content: Innehåll
