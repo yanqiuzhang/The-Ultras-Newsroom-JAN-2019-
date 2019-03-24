@@ -7,18 +7,36 @@
 // To reference this file, add <%= javascript_pack_tag 'application' %> to the appropriate
 // layout file, like app/views/layouts/application.html.erb
 
-
-
 import "../css/tailwind.css"
 
 document.addEventListener('turbolinks:load', () => {
-	const subscriptionForm = document.getElementById('subscription_form')
+  const subscriptionForm = document.getElementById('subscription_form')
 
-	if (subscriptionForm) {
-		const stripe = Stripe('pk_testxxxxx')
-		const elements = stripe.elements()
-		const card = elements.create('card', {hidePostalCode: true})
+  if (subscriptionForm) {
+   const stripe = Stripe('pk_test_zARpoHaZOl2LQLtr0YOthxBm0097GcQG8Q')
+   const elements = stripe.elements()
 
-		card.mount('#card_element')
-	}
-}) 
+   var style = {
+     base: {
+       fontSize: '16px',
+       color: "#32325d",      
+     }
+   };
+   
+   const card = elements.create('card',{style: style}, {hidePostalCode: true})
+
+    card.mount('#card-element')
+
+    subscriptionForm.addEventListener('submit', (event) => {
+      event.preventDefault();
+      stripe.createToken(card).then(result => {
+	   const hiddenInput = document.createElement('input')
+       //hiddenInput.setAttribute('type', 'hidden')
+       hiddenInput.setAttribute('name', 'stripeToken')
+       hiddenInput.setAttribute('value', "vick3d")
+       subscriptionForm.appendChild(hiddenInput)
+       subscriptionForm.submit()
+     })
+   })
+ }
+})
