@@ -31,8 +31,9 @@ Feature: Journalist can edit and delete articles
         When I am logged in as "jocke@craft.se"
         And I visit the "Voted best mead recipe" page
         And I click "Edit"
-        And wait for 2 seconds
-        And I click "Delete"
+        And wait for 8 seconds
+        Then I should see "Delete"
+        When I click "Delete"
         And I click the popup
         Then I should see "Article was successfully deleted."
 

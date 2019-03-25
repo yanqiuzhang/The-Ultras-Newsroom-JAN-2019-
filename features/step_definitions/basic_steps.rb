@@ -11,6 +11,10 @@ Given("I visit the editor page") do
     visit editor_articles_path
 end  
 
+When("I visit the journalist new article page") do
+    visit new_journalist_article_path
+end
+
 Given("the following articles exist") do |table|
     table.hashes.each do |article|
         user = User.find_by(email: article[:user])
@@ -50,5 +54,5 @@ When("show me the page") do
 end
 
 When("wait for {int} seconds") do |int|
-    sleep 2
+    sleep int
 end
