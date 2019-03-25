@@ -28,8 +28,9 @@ en:
       create: "Create article"
       submit: "Save article"
       update: "Update article"
-  
-  form_with:
-    :title: Title
-    :lead: Lead
-    :content: Content
+
+    label:
+      article:
+        title: Title
+        lead: Lead
+        content: Content

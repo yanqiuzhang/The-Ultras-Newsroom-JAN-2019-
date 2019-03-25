@@ -25,8 +25,9 @@ sv:
       create: Skapa Artikeln
       submit: Spara Artikeln
       update: Uppdatera Artikeln
-  
-  form_with:
-    :title: Titel
-    :lead: Ingress
-    :content: Innehåll
+
+    label:
+      article:
+        title: Titel
+        lead: Ingress
+        content: Innehåll

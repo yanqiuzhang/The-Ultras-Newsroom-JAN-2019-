@@ -2,20 +2,19 @@
  
 <%= form_with model: @article, url: journalist_article_path(@article), local: true do |form| %>
     <p>
-        <%= form.label t(:title, scope: 'form_with') %><br>
+        <%= form.label :title %><br>
         <%= form.text_field :title %>
     </p>
  
     <p>
-        <%= form.label t(:lead, scope: 'form_with') %><br>
+        <%= form.label :lead %><br>
         <%= form.text_area :lead %>
     </p>
 
     <p>
-        <%= form.label t(:content, scope: 'form_with') %><br>
+        <%= form.label :content %><br>
         <%= form.text_area :content %>
-    </p>
- 
+    </p> 
     <p>
         <%= form.submit %>
     </p>

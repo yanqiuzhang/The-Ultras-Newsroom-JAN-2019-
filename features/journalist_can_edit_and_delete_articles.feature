@@ -24,7 +24,7 @@ Feature: Journalist can edit and delete articles
     Scenario: Journalist can edit articles
         When I click "Edit"
         And I fill in "Title" with "Voted worst mead recipe"
-        And I click "Update Article"
+        And I click "Update article"
         Then I should see "Article was successfully updated."
 
     Scenario: Journalist can't edit other journalists articles
