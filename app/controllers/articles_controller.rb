@@ -13,21 +13,8 @@ class ArticlesController < ApplicationController
         end
     end
 
-    def new   
-    end
-
     def show
         @article = Article.find(params[:id])
-    end
-
-    def create
-        article = Article.new(article_params)
-       
-        if article.save
-            redirect_to new_article_path, notice: 'Article was successfully created.'
-        else
-            redirect_to new_article_path, alert: 'You have to fill out all the fields'
-        end
     end
        
     private
