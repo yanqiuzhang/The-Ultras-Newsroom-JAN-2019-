@@ -1,4 +1,5 @@
 Feature: Visitor can view articles in categories
+    
     As a visitor
     In order to view articles within a specific subject
     I would like to be able to filter the articles displayed in categories

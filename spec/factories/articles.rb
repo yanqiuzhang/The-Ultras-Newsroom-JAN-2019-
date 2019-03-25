@@ -3,7 +3,8 @@ FactoryBot.define do
     title   { "MyString" }
     lead    { "MyText" }
     content { "MyText" }
+    premium { false }
     user
-    approved { "Boolean" }
+    approved { true }
   end
 end

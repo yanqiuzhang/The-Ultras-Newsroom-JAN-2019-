@@ -10,13 +10,13 @@ Feature: Editor can publish articles
             | jocke@craft.se | password | journalist |
             | per@mail.se    | password | editor |
 
-        And I am logged in as "per@mail.se"
-
         And the following articles exist
             | title                                 | lead                   | content                                          | category      | user           | approved |
             | Voted best mead recipe                | Restaurant wins prize  | Restaurant wins prize for best mead in Sweden    | Lifestyle     | jocke@craft.se | false     |
             | Ancient viking grave discovered       | Kids came across sword | Kids come across sword protruding from the earth | Breaking News | jocke@craft.se | true     |
             | Drinking wine improves general health | Drink wine today!      | Studies show that wine is good for your heart    | Health        | jocke@craft.se | true     |
+            
+        And I am logged in as "per@mail.se"
     
     Scenario: Editor can publish articles
         Given I visit the editor page
@@ -31,4 +31,3 @@ Feature: Editor can publish articles
         Then I should see "Ancient viking grave discovered"
         And I click "Ancient viking grave discovered"
         Then I should not see "Publish"
-
