@@ -10,6 +10,8 @@ Then("I should be on the landing page") do
     expect(current_path).to eq root_path
 end
 
-Then("my role should be changed to {string}") do |string|
-    pending # Write code here that turns the phrase above into concrete actions
+Then("{string} should have user role {string}") do |email, role|
+    user = User.find_by(email: email)
+    expect(user.role).to eq role
 end
+  

@@ -1,4 +1,4 @@
-@javascript
+@javascript @stripe
 Feature: Visitor can buy a subscription
 
     As a user
@@ -17,5 +17,6 @@ Feature: Visitor can buy a subscription
         And wait for 3 seconds
         And I fill in the payment form with valid cc credentials
         And I click "Submit payment"
+        And wait for 3 seconds
         Then I should see "You have successfully subscribed!"
-        And my role should be changed to "subscriber"
+        And "visitor@craft.se" should have user role "subscriber"

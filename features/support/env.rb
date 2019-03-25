@@ -18,7 +18,7 @@ end
 
 Capybara.register_driver :selenium do |app|
   options = Selenium::WebDriver::Chrome::Options.new(
-      args: %w( headless disable-popup-blocking disable-infobars)
+      args: %w( disable-popup-blocking disable-infobars)
   )
 
   Capybara::Selenium::Driver.new(

@@ -62,7 +62,7 @@ When('I fill in the payment form with valid cc credentials') do
       exp_date_field = find_field('exp-date')
       cvc_field = find_field('cvc')
   
-      4.times { sleep 0.1; card_field.send_keys(right: '4242'); sleep 0.1; }
+      4.times { sleep 0.2; card_field.send_keys(right: '4242'); sleep 0.2; }
       exp_date_field.send_keys('1221')
       cvc_field.send_keys('123')
     end
