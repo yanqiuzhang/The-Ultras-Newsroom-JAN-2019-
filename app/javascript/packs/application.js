@@ -15,15 +15,8 @@ document.addEventListener('turbolinks:load', () => {
   if (subscriptionForm) {
    const stripe = Stripe('pk_test_zARpoHaZOl2LQLtr0YOthxBm0097GcQG8Q')
    const elements = stripe.elements()
-
-   var style = {
-     base: {
-       fontSize: '16px',
-       color: "#32325d",      
-     }
-   };
    
-   const card = elements.create('card',{style: style}, {hidePostalCode: true})
+   const card = elements.create('card', {hidePostalCode: true})
 
     card.mount('#card-element')
 
@@ -31,9 +24,9 @@ document.addEventListener('turbolinks:load', () => {
       event.preventDefault();
       stripe.createToken(card).then(result => {
 	   const hiddenInput = document.createElement('input')
-       //hiddenInput.setAttribute('type', 'hidden')
+       hiddenInput.setAttribute('type', 'hidden')
        hiddenInput.setAttribute('name', 'stripeToken')
-       hiddenInput.setAttribute('value', "vick3d")
+       hiddenInput.setAttribute('value', result.token.id)
        subscriptionForm.appendChild(hiddenInput)
        subscriptionForm.submit()
      })

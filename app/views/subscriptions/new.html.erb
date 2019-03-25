@@ -1,5 +1,9 @@
 <h1>Subscriptions</h1>
+<div class="flex justify-center">
+<div class="text-center w-1/5">
 <%= form_with url: subscriptions_path, local: true, id: 'subscription_form' do |form| %>
-  <div id="card_element"></div>
+  <div id="card-element" class="w-full"></div>
   <%= form.submit "Submit payment" %>
 <% end %>
+</div>
+</div>
