@@ -37,6 +37,7 @@ Feature: Journalist can edit and delete articles
     Scenario: Journalist can delete articles
         When I click "Edit"
         And wait for 8 seconds
+        And I should see "Delete"
         And I click "Delete"
         And I click the popup
         Then I should see "Article was successfully deleted."

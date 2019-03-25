@@ -43,6 +43,7 @@ ActiveRecord::Schema.define(version: 2019_03_22_130206) do
     t.datetime "updated_at", null: false
     t.text "lead"
     t.bigint "user_id"
+    t.boolean "premium", default: false
     t.index ["user_id"], name: "index_articles_on_user_id"
   end
 

@@ -6,7 +6,11 @@ When("I visit the {string} page") do |title|
     article = Article.find_by_title(title)
     visit journalist_article_path(article)
 end
-  
+
+When("I visit the journalist new article page") do
+    visit new_journalist_article_path
+end
+
 Given("the following articles exist") do |table|
     table.hashes.each do |article|
         user = User.find_by(email: article[:user])
@@ -39,7 +43,7 @@ Then("I fill in {string} with {string}") do |field, input|
     fill_in field, with: input
 end
 
-When("I click {string}") do |element|
+When("(when )I click {string}") do |element|
     click_on element
 end
 
@@ -53,8 +57,4 @@ end
 
 And("I attach dummy_image.png") do
     attach_file('article_image', "#{::Rails.root}/spec/fixtures/dummy_image.png")
-end
-
-And("Show me the page") do
-save_and_open_page
 end
