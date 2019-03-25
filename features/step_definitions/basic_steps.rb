@@ -50,3 +50,11 @@ end
 When("wait for {int} seconds") do |int|
     sleep int
 end
+
+And("I attach dummy_image.png") do
+    attach_file('article_image', "#{::Rails.root}/spec/fixtures/dummy_image.png")
+end
+
+And("Show me the page") do
+save_and_open_page
+end

@@ -1,4 +1,5 @@
-Feature: Journalist can add image
+@javascript
+Feature: Journalist can add and delete image
 
     As a journalist
     In order to make my articles more visually appealing
@@ -22,6 +23,8 @@ Feature: Journalist can add image
 
     Scenario: Journalist can add image
         When I click "Edit"
-        And I click "Choose image"
+        And I attach dummy_image.png
         And I click "Update Article"
-        Then I should see "image"
+        And I visit the "Voted best mead recipe" page
+        And Show me the page
+        Then I should see "dummy_image.png"
