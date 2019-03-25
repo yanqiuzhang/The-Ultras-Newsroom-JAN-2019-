@@ -3,24 +3,31 @@ class SubscriptionsController < ApplicationController
   end
 
   def create
-    customer = Stripe::Customer.create(
-      email: current_user.email,
-      source: stripe_token(params),
-      description: 'The Viking Times subscription'
-    )
+    if user_signed_in? 
+      customer = Stripe::Customer.create(
+        email: current_user.email,
+        source: stripe_token(params),
+        description: 'The Viking Times subscription'
+      )
 
-    charge = Stripe::Charge.create(
-      customer: customer.id,
-      amount: 15_000,
-      currency: 'sek',
-      description: 'The Viking Times: 1 month subscription'
-    )
+      charge = Stripe::Charge.create(
+        customer: customer.id,
+        amount: 15_000,
+        currency: 'sek',
+        description: 'The Viking Times: 1 month subscription'
+      )
 
-    if charge[:paid]     
-      redirect_to root_path, notice: "You have successfully subscribed!"
-    else
-      redirect_to subscriptions_path, notice: "Something went very wrong!"
+      if charge[:paid]
+        current_user.role = "subscriber"     
+        redirect_to root_path, notice: "You have successfully subscribed!"
+      else
+        redirect_to subscriptions_path, notice: "Something went very wrong!"
+      end
+    else 
+      redirect_to new_subscription_path, notice: "You need to be logged in to buy a subscription"
     end
+    rescue Stripe::CardError => e
+    redirect_to(new_subscription_path, notice: e.message) && return
   end
 
   private
