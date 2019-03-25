@@ -19,10 +19,15 @@ class Journalist::ArticlesController < ApplicationController
     end
 
     def destroy
-        if @article.destroy
-            redirect_to articles_path, notice: 'Article was successfully deleted.'
+        if params[:deleteimage] == "true"
+            @article.image.destroy
+            redirect_to articles_path, notice: 'Image was successfully deleted.'
         else
-            redirect_to articles_path, notice: 'Article was not successfully deleted.'
+            if @article.destroy
+                redirect_to articles_path, notice: 'Article was successfully deleted.'
+            else
+                redirect_to articles_path, notice: 'Article was not successfully deleted.'
+            end
         end
     end
 

@@ -14,8 +14,7 @@
 </p>
 
 <p>
-    <strong>Image:</strong>
-    <%= image_tag @article.image if @article.image.attached? %>
+    <%= image_tag @article.image, style: 'height:30%;width:30%;' if @article.image.attached? %>
 </p>
 <%= link_to "Edit", edit_journalist_article_path %>
 <%= link_to "Back", journalist_articles_path %>

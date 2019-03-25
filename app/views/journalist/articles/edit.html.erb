@@ -29,8 +29,20 @@
                 method: :delete,
                 data: { confirm: 'Are you sure?' } 
         %>     
-    </p>
-        
+    </p> 
+
+    <% if @article.image.attached? == true %>
+    <p> 
+        <%= link_to 'Delete Image', 
+            journalist_article_path(@article, deleteimage: true), 
+                method: :delete,
+                data: { confirm: 'Are you sure?' }
+        %>     
+    </p>   
+    <% else %>
+    <% false %>
+    <% end %>  
+    
 <% end %>
  
 <%= link_to 'Back', :back %>

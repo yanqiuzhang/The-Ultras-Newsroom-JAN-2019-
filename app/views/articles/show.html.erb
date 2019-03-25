@@ -10,6 +10,7 @@
 <p>
     <%= @article.content %>
 </p>
+<%= image_tag @article.image, style: 'height:30%;width:30%;' if @article.image.attached? %>
 </div>
 
 <%= link_to "Back", :back %>
