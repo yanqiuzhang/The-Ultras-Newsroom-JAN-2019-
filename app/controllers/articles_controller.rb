@@ -20,7 +20,7 @@ class ArticlesController < ApplicationController
 
     def check_subscriber
         if Article.find(params[:id]).premium? == true 
-            if current_user.subscriber?
+            if user_signed_in? && current_user.subscriber?
                 true
             else
                 redirect_to root_path, notice: 'To read this premium article, you need to become a subscriber.'

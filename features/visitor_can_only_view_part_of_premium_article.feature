@@ -11,7 +11,7 @@ Feature: Visitor can only view part of premium article
         Given the following articles exist
             | title                           | lead                   | content                                          | category      | premium | user           |
             | Voted best mead recipe          | Restaurant wins prize  | Restaurant wins prize for best mead in Sweden    | Lifestyle     | true    | jocke@craft.se |
-            | Ancient viking grave discovered | Kids came across sword | Kids come across sword protruding from the earth | Breaking News | false   | jocke@craft.se |
+            | Ancient viking grave discovered | Kids came across sword | Kids come across sword protruding from the earth | Breaking News | false   | jocke@craft.se | 
 
     Scenario: Visitor clicks on premium content and gets notice to subscribe
         When I visit the site
