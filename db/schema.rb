@@ -49,12 +49,9 @@ ActiveRecord::Schema.define(version: 2019_03_21_094555) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.integer "role"
-    t.bigint "article_id"
-    t.index ["article_id"], name: "index_users_on_article_id"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end
 
   add_foreign_key "articles", "users"
-  add_foreign_key "users", "articles"
 end
