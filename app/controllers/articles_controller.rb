@@ -1,6 +1,5 @@
 class ArticlesController < ApplicationController
     protect_from_forgery
-    before_action :check_journalist, only: [:create, :new]
     before_action :check_subscriber, only: [:show]
     before_action :authenticate_user!, only: [:create, :new]
     
@@ -18,14 +17,6 @@ class ArticlesController < ApplicationController
     end
        
     private
-
-    def check_journalist
-        if user_signed_in? && current_user.journalist?
-            true
-        else
-            redirect_to root_path, notice: 'Permission denied.'
-        end
-    end
 
     def check_subscriber
         if Article.find(params[:id]).premium? == true 
