@@ -1,22 +1,18 @@
 <p>
-    <strong>Title:</strong>
-    <%= @article.title %>
+  <strong>Title:</strong>
+  <%= @article.title %>
 </p>
-
 <p>
-    <strong>Lead:</strong>
-    <%= @article.lead %>
+  <strong>Lead:</strong>
+  <%= @article.lead %>
 </p>
-
 <p>
-    <strong>Text:</strong>
-    <%= @article.content %>
+  <strong>Text:</strong>
+  <%= @article.content %>
 </p>
-
-<%= link_to "Back", editor_articles_path %> 
-
+<%= link_to "Back", editor_articles_path %>
 <% if @article.approved == false %>
-<%= link_to "Publish", editor_article_path(@article, approved: true), method: :patch  %>
-<% else  %>
-<% false %>
+  <%= link_to "Publish", editor_article_path(@article, approved: true), method: :patch %>
+<% else %>
+  <% false %>
 <% end %>
