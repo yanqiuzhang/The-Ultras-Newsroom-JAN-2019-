@@ -26,5 +26,5 @@ Feature: Journalist can add and delete image
         And I attach dummy_image.png
         And I click "Update Article"
         And I visit the "Voted best mead recipe" page
-        And Show me the page
-        Then I should see "dummy_image.png"
+        # And Show me the page
+        Then I should see the image "dummy_image.png"
