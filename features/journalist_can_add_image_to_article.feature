@@ -28,3 +28,14 @@ Feature: Journalist can add and delete image
         And I visit the "Voted best mead recipe" page
         # And Show me the page
         Then I should see the image "dummy_image.png"
+    
+    Scenario: Journalist can delete image
+        When I click "Edit"
+        And I attach dummy_image.png
+        And I click "Update Article"
+        And I visit the "Voted best mead recipe" page
+        When I click "Edit"
+        And I click "Delete Image"
+        And I click the popup
+        And I visit the "Voted best mead recipe" page
+        Then I should not see the image "dummy_image.png"

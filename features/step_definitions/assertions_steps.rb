@@ -13,3 +13,7 @@ end
 Then("I should see the image {string}") do |image|
     expect(page).to have_xpath("//img[contains(@src, \"#{image}\")]")   
 end
+
+Then("I should not see the image {string}") do |image|
+    expect(page).to have_no_xpath("//img[contains(@src, \"#{image}\")]")   
+end
