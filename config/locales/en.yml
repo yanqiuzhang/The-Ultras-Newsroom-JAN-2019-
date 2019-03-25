@@ -4,9 +4,6 @@ en:
     title: Title
     lead: Lead
     content: Content
-  
-    labels:
-      title: Titeldsfs
 
   links:
     signout: Sign out
