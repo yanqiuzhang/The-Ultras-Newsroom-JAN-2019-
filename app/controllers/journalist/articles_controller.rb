@@ -20,9 +20,6 @@ class Journalist::ArticlesController < ApplicationController
         end
     end
 
-    def edit
-    end
-
     def update
         if @article.update(article_params)
             redirect_to journalist_article_path, notice: 'Article was successfully updated.'

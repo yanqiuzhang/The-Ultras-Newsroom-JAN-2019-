@@ -6,6 +6,7 @@ RSpec.describe Article, type: :model do
         it { is_expected.to have_db_column :title }
         it { is_expected.to have_db_column :lead }
         it { is_expected.to have_db_column :content }
+        it { is_expected.to have_db_column :approved }
         it { is_expected.to have_db_column :premium }
     end
 
@@ -16,6 +17,9 @@ RSpec.describe Article, type: :model do
         it { should_not allow_value(nil).for(:premium) }
         it { should allow_value(true).for(:premium) }
         it { should allow_value(false).for(:premium) }
+        it { should_not allow_value(nil).for(:approved) }
+        it { should allow_value(true).for(:approved) }
+        it { should allow_value(false).for(:approved) }
     end
 
     describe 'Associations' do
