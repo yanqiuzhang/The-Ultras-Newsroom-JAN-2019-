@@ -4,10 +4,7 @@
 
 h1 {
     font-family: 'Over the Rainbow', cursive;
-    @apply text-5xl; 
-    @apply text-center;
-    @apply mt-8;
-    @apply leading-loose;
+    @apply text-5xl text-center leading-loose mt-6
 }
 
 .back {
@@ -20,5 +17,25 @@ h1 {
     grid-template-rows: 150px 150px;
     grid-row-gap: 30px;
     grid-column-gap: 50px;
-    @apply justify-center mt-6;
+    @apply justify-center mt-6
+}
+
+.en_link {
+    @apply no-underline text-center p-4 float-left
+}
+
+.login_button {
+   @apply no-underline block inline-block float-right mt-0 mr-4 p-4
+}
+
+.signout_button {
+   @apply no-underline block inline-block float-right mt-0 mr-4 p-4
+}
+
+.categories {
+    @apply no-underline text-white pl-8 pr-8 pt-2 pb-2 bg-black
+}
+
+.categories:hover {
+    @apply no-underline bg-orange-dark
 }

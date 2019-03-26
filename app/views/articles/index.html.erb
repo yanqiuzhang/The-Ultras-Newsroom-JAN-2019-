@@ -1,14 +1,20 @@
-<div class="border-b-2">
+ <% if user_signed_in? %>
+  <%= link_to t('signout'), destroy_user_session_path, method: :delete, class: "signout_button" %>
+<% else %>
+  <%= link_to t('login'), new_user_session_path, method: :new, class: "login_button" %>
+<% end %>
+
+<div class="border-b-2 mb-4">
   <h1> The Viking Times </h1>
 </div>
-<div class="flex justify-center pt-2 border-b-2 pb-2">
+<div class="flex justify-center pt-2 pb-2">
   <ul class="list-reset flex">
     <li class="mx-2">
-      <%= link_to 'All', articles_path %>
+      <%= link_to 'All', articles_path, class: "categories" %>
     </li>
     <% @categories.each do |category| %>
       <li class="mx-2">
-        <%= link_to category.name, articles_path(params: {category: category.name}) %>
+         <%= link_to category.name, articles_path(params: {category: category.name}), class: "categories"%>
       </li>
     <% end %>
   </ul>

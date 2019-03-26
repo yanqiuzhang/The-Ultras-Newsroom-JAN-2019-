@@ -10,14 +10,11 @@
     <%= stylesheet_pack_tag 'application' %>
   </head>
   <body>
-    <%= link_to_unless_current "English", locale: 'en' %>
-    <%= link_to_unless_current "Svenska", locale: 'sv' %>
+    <div class="p-4">
+       <%= link_to_unless_current "English", locale: 'en', class: "en_link" %>
+       <%= link_to_unless_current "Svenska", locale: 'sv' %>
+    </div>
     <%= notice || alert %>
     <%= yield %>
-    <% if user_signed_in? %>
-      <%= link_to t('signout'), destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to t('login'), new_user_session_path, method: :new %>
-    <% end %>
   </body>
 </html>
