@@ -17,7 +17,7 @@ Feature: User can buy a subscription
         And wait for 3 seconds
         And I fill in the payment form with valid cc credentials
         And I click "Submit payment"
-        And wait for 3 seconds
+        And wait for 4 seconds
         Then I should see "You have successfully subscribed!"
         And "visitor@craft.se" should be a "subscriber"
 
@@ -38,4 +38,4 @@ Feature: User can buy a subscription
         And I fill in the payment form with invalid cc credentials
         And I click "Submit payment"
         And wait for 3 seconds
-        Then I should see   
+        Then I should see "Your card has insufficient funds"
