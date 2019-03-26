@@ -3,18 +3,22 @@
   <p class="text-black text-center">Ancient but Modern</p>
 </div> 
 <section class="flex justify-center ">
-  <span class="text-center pt-2 pb-2 border-t border-black border-w-5px w-4/5">
+  <span class="text-center pt-2 pb-2 border-t border-black w-4/5">
     <ul class="list-reset flex justify-center">
-      <li class="mx-2 px-5">
-        <%= link_to 'All', articles_path %>
+      <li class="mt-2 px-5">
+        <%= link_to t('all', scope: 'links'), articles_path %>
       </li>
-      <% @categories.each do |category| %>
-        <li class="mx-2 px-5">
-          <%= link_to category.name, articles_path(params: {category: category.name})%>
+      <% @categories.each do |category| %> 
+        <li class="mt-2 px-5">
+          <%= link_to t(category.name, scope: 'categories'), articles_path(params: {category: category.name}) %>
         </li>
       <% end %>
     </ul>
-    <div class="">
+  </span>
+</section>
+<section>
+  <span class="mt-4">
+    <div class="article-grid">
       <% @articles.each do |article|%>
         <div id="<%= dom_id(article) %>">
           <%=  link_to(article_path(article)) do %>
@@ -33,4 +37,6 @@
       <% end %>
     </div>
   </span>
-</section>
+<section>
+
+

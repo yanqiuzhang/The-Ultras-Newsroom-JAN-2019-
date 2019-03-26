@@ -17,7 +17,7 @@
       </div>
       <div class="float-right mr-5">
         <% if user_signed_in? %>
-          %= link_to t('signout'), destroy_user_session_path, method: :delete, class: "header-links login-button" %>
+          <%= link_to t('signout'), destroy_user_session_path, method: :delete, class: "header-links login-button" %>
         <% else %>
           <%= link_to t('login'), new_user_session_path, method: :new, class: "header-links login-button"%>
         <% end %>
