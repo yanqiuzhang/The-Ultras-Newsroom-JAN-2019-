@@ -5,5 +5,6 @@ FactoryBot.define do
     content { "MyText" }
     premium { false }
     user
+    approved { true }
   end
 end
