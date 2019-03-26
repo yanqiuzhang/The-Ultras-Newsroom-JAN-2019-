@@ -9,3 +9,8 @@ end
 Then("I should be on the landing page") do
     expect(current_path).to eq root_path
 end
+
+Then("{string} should be a {string}") do |email, role|
+    user = User.find_by(email: email)
+    expect(user.role).to eq role
+end

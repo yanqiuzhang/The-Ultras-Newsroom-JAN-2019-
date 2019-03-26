@@ -19,6 +19,7 @@ Feature: User can buy a subscription
         And I click "Submit payment"
         And wait for 3 seconds
         Then I should see "You have successfully subscribed!"
+        And "visitor@craft.se" should be a "subscriber"
 
     Scenario: Visitor can not buy a subscription (Sad path)
         When I visit the site

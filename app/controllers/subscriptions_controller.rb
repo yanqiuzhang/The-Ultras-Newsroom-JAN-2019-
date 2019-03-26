@@ -18,7 +18,7 @@ class SubscriptionsController < ApplicationController
       )
 
       if charge[:paid]
-        current_user.role = "subscriber"     
+        current_user.subscriber!    
         redirect_to root_path, notice: "You have successfully subscribed!"
       else
         redirect_to subscriptions_path, notice: "Something went very wrong!"
