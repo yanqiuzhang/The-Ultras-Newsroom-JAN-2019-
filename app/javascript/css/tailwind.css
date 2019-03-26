@@ -20,22 +20,39 @@ h1 {
     @apply justify-center mt-6
 }
 
-.en_link {
-    @apply no-underline text-center p-4 float-left
+.nav {
+    @apply bg-black
 }
+
 
 .login_button {
-   @apply no-underline block inline-block float-right mt-0 mr-4 p-4
+   @apply float-right mt-0 mr-4 p-4
 }
 
-.signout_button {
-   @apply no-underline block inline-block float-right mt-0 mr-4 p-4
-}
 
 .categories {
     @apply no-underline text-white pl-8 pr-8 pt-2 pb-2 bg-black
 }
 
 .categories:hover {
-    @apply no-underline bg-orange-dark
+    @apply no-underline font-bold text-grey
 }
+
+
+.header-links {
+    @apply no-underline text-white font-bold inline-block
+}
+
+.header-links:hover {
+    @apply text-grey
+}
+
+a { 
+    color: inherit;
+    @apply no-underline
+ } 
+
+a:hover {
+    @apply font-bold text-grey
+}
+
