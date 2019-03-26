@@ -42,11 +42,3 @@ Feature: Journalist can edit and delete articles
         And I visit the "Voted best mead recipe" page
         And I click "Edit"
         Then I should see "You can only edit your own articles."
-
-    @javascript
-    Scenario: Journalist can delete articles
-        When I click "Edit"
-        And wait for 8 seconds
-        And I click "Delete"
-        And I click the popup
-        Then I should see "Article was successfully deleted."
