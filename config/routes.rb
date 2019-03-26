@@ -10,4 +10,8 @@ Rails.application.routes.draw do
     namespace :editor do
         resources :articles
     end
+
+    namespace :api do
+        resources :articles, only: [:index]
+    end
 end
