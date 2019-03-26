@@ -7,7 +7,17 @@ class Journalist::ArticlesController < ApplicationController
         @article = Article.find(params[:id])
     end
     
-    def edit
+    def new   
+    end
+
+    def create
+        article = Article.new(article_params)
+        article.user = current_user
+        if article.save
+            redirect_to new_journalist_article_path, notice: 'Article was successfully created.'
+        else
+            redirect_to new_journalist_article_path, alert: 'You have to fill out all the fields'
+        end
     end
 
     def update

@@ -7,6 +7,14 @@ When("I visit the {string} page") do |title|
     visit journalist_article_path(article)
 end
   
+Given("I visit the editor page") do
+    visit editor_articles_path
+end  
+
+When("I visit the journalist new article page") do
+    visit new_journalist_article_path
+end
+
 Given("the following articles exist") do |table|
     table.hashes.each do |article|
         user = User.find_by(email: article[:user])
@@ -24,27 +32,25 @@ Given("the following users exist") do |table|
     end
 end
 
-Given("the following categories exist") do |table|
-    table.hashes.each do |category|
-        create(:category, category)
-    end
-end
-
 Given("I am logged in as {string}") do |email|
     user = User.find_by(email: email)
     login_as(user, scope: :user)
 end    
 
-Then("I fill in {string} with {string}") do |field, input|
+When("I fill in {string} with {string}") do |field, input|
     fill_in field, with: input
 end
 
-When("I click {string}") do |element|
+When("(when )I click {string}") do |element|
     click_on element
 end
 
 And("I click the popup") do
     page.driver.browser.switch_to.alert.accept
+end
+
+When("show me the page") do
+    save_and_open_page
 end
 
 When("wait for {int} seconds") do |int|
