@@ -6,7 +6,7 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create(email: "journalist@mail.se", password: "password", role: "journalist")
+user = User.create(email: "journalist@mail.se", password: "password", role: "journalist")
 User.create(email: "visitor@mail.se", password: "password", role: "visitor")
 
 category_1 = Category.create(name: "lifestyle")
@@ -14,8 +14,6 @@ category_2 = Category.create(name: "breakingnews")
 category_3 = Category.create(name: "politics")
 category_4 = Category.create(name: "health")
 category_5 = Category.create(name: "sports")
-
-user = User.all.find_by_role("journalist")
 
 article_1 = Article.create(title: "Voted best mead recipe", lead: "Restaurant wins prize", content: "Restaurant wins prize for best mead in Sweden", user: user)
 article_2 = Article.create(title: "Ancient viking grave discovered", lead: "Kids came across sword", content: "Kids come across sword protruding from the earth", user: user)
