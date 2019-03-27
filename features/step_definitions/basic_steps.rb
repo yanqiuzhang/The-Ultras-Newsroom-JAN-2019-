@@ -37,8 +37,8 @@ Given("I am logged in as {string}") do |email|
     login_as(user, scope: :user)
 end    
 
-When("(when )I click {string}") do |element|
-    click_on element
+When("I click {string}") do |element|     
+    click_on element 
 end
 
 And("I click the popup") do
