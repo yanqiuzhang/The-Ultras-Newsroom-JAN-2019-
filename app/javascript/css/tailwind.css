@@ -2,9 +2,21 @@
 @tailwind components;
 @tailwind utilities;
 
+
 h1 {
-    font-family: 'Over the Rainbow', cursive;
-    @apply text-5xl text-center leading-loose mt-6
+    font-family: 'Germania One', sans-serif;
+    font-size: 7rem;
+    @apply text-center mt-6 tracking-wide
+}
+
+.slogan {
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    @apply italic
+}
+
+.article-show {
+    @apply text-center;
 }
 
 .back {
@@ -13,11 +25,11 @@ h1 {
 
 .article-grid {
     display: grid;
-    grid-template-columns: 300px 300px 300px;
+    grid-template-columns: 500px 500px 500px;
     grid-template-rows: 150px 150px;
     grid-row-gap: 30px;
-    grid-column-gap: 50px;
-    @apply justify-center mt-6
+    grid-column-gap: 0px;
+    @apply justify-center mt-6 p-0
 }
 
 .nav {
@@ -56,3 +68,15 @@ a:hover {
     @apply font-bold text-grey
 }
 
+
+.title-show {
+    @apply text-5xl uppercase mt-24 border-b-2;
+}
+
+.lead {
+    @apply font-bold mt-16 text-2xl;
+}
+
+.article-content {
+    @apply m-32 text-2xl;
+}

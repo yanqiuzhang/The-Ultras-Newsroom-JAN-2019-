@@ -1,6 +1,6 @@
 <div class="mb-5">
   <h1 class="text-black text-center"> The Viking Times </h1>
-  <p class="text-black text-center">Ancient but Modern</p>
+  <p class="text-black text-center slogan">Ancient but Modern</p>
 </div> 
 <section class="flex justify-center ">
   <span class="text-center pt-2 pb-2 border-t border-black w-4/5">
@@ -16,19 +16,22 @@
     </ul>
   </span>
 </section>
-<section>
+<section class="flex justify-center">
   <span class="mt-4">
     <div class="article-grid">
       <% @articles.each do |article|%>
         <div id="<%= dom_id(article) %>">
           <%=  link_to(article_path(article)) do %>
-            <div class="max-w-sm rounded overflow-hidden shadow-lg">
+            <div class="overflow-hidden">
               <div class="px-6 py-4">
                 <div class="font-bold text-xl mb-2">
                   <%= article.title %>
                 </div>
                 <p class="text-grey-darker text-base">
                   <%= article.lead %>
+                </p>
+                <p class="text-grey-darker text-base">
+                  <%= image_tag article.image, style: 'height:auto;width:auto;' if article.image.attached? %>
                 </p>
               </div>
             </div>
