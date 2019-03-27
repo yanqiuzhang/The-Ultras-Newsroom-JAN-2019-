@@ -1,4 +1,6 @@
 plugins:
   postcss-import: {}
-  
-  tailwindcss: './app/javascript/css/tailwind.js'postcss-cssnext: {}
+  postcss-cssnext: {}
+  autoprefixer: {}
+  tailwindcss: './app/javascript/src/tailwind.js'
+
