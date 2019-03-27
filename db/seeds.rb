@@ -8,6 +8,7 @@
 
 user = User.create(email: "journalist@mail.se", password: "password", role: "journalist")
 User.create(email: "visitor@mail.se", password: "password", role: "visitor")
+User.create(email: "editor@mail.se", password: "password", role: "editor")
 
 category_1 = Category.create(name: "lifestyle")
 category_2 = Category.create(name: "breakingnews")

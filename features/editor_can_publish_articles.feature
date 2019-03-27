@@ -1,27 +1,33 @@
-Feature: Visitor can view articles in categories
-    
-    As a visitor
-    In order to view articles within a specific subject
-    I would like to be able to filter the articles displayed in categories
+Feature: Editor can publish articles
+
+    As an editor,
+    In order to make sure that the articles have good standards
+    I would like only editors to be able to publish articles.
 
     Background:
         Given the following users exist
             | email          | password | role       |
             | jocke@craft.se | password | journalist |
-            | per@mail.se    | password | journalist |
+            | per@mail.se    | password | editor |
 
         And the following articles exist
             | title                                 | lead                   | content                                          | category      | user           | approved |
             | Voted best mead recipe                | Restaurant wins prize  | Restaurant wins prize for best mead in Sweden    | Lifestyle     | jocke@craft.se | false     |
             | Ancient viking grave discovered       | Kids came across sword | Kids come across sword protruding from the earth | Breaking News | jocke@craft.se | true     |
             | Drinking wine improves general health | Drink wine today!      | Studies show that wine is good for your heart    | Health        | jocke@craft.se | true     |
-
-    Scenario: A visitor can see and filter articles within a specific category
-        When I visit the site
-        Then I should see "Breaking News"
-        And I should see "Lifestyle"
-        And I should see "Health"
-        When I click "Breaking News" 
+            
+        And I am logged in as "per@mail.se"
+    
+    Scenario: Editor can publish articles
+        Given I visit the editor page
+        Then I should see "Voted best mead recipe"
+        And I click "Voted best mead recipe"
+        And I should see "Publish"
+        And I click "Publish"
+        Then I should see "Article was successfully published."
+    
+    Scenario: Editor can't publish published articles [sad path]
+        Given I visit the editor page
         Then I should see "Ancient viking grave discovered"
-        And I should see "Kids came across sword"
-        And I should not see "Voted best mead recipe"
+        And I click "Ancient viking grave discovered"
+        Then I should not see "Publish"
