@@ -37,13 +37,6 @@ Given("I am logged in as {string}") do |email|
     login_as(user, scope: :user)
 end    
 
-When("I fill in {string} with {string}") do |field, input|
-    fill_in field, with: input
-end
-
-When("(when )I click {string}") do |element|
-    click_on element
-end
 
 And("I click the popup") do
     page.driver.browser.switch_to.alert.accept
@@ -55,4 +48,12 @@ end
 
 When("wait for {int} seconds") do |int|
     sleep int
+end
+
+And("I attach dummy_image.png") do
+    attach_file('article_image', "#{::Rails.root}/spec/fixtures/dummy_image.png")
+end
+
+When("(when )I click {string}") do |element|
+    click_on element
 end

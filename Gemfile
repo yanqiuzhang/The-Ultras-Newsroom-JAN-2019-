@@ -16,6 +16,7 @@ gem 'tailwindcss', '~> 0.2.0'
 gem 'devise'
 gem 'rack-cors', require: 'rack/cors'
 gem 'devise_token_auth'
+gem "aws-sdk-s3", require: false
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
