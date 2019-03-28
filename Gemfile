@@ -30,6 +30,7 @@ group :development, :test do
   gem 'chromedriver-helper'
   gem 'selenium-webdriver'
   gem 'launchy'
+  gem 'stripe-ruby-mock', '~> 2.5.6', require: 'stripe_mock'
 end
 
 group :development do

@@ -27,4 +27,13 @@ Capybara.register_driver :selenium do |app|
       options: options
   )
 end
+
 Capybara.javascript_driver = :selenium
+
+Before '@stripe' do
+	StripeMock.start
+end
+
+After '@stripe' do
+	StripeMock.stop
+end 
