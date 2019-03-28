@@ -6,9 +6,9 @@ class ArticlesController < ApplicationController
     def index
         @categories = Category.all
         if params[:category].present?
-            @articles = Category.find_by(name: params[:category]).articles
+            @articles = Category.find_by(name: params[:category]).articles.approved
         else
-            @articles = Article.all
+            @articles = Article.approved
         end
     end
 
@@ -31,6 +31,6 @@ class ArticlesController < ApplicationController
     end
 
     def article_params
-        params.require(:article).permit(:title, :content, :lead)
+        params.require(:article).permit(:title, :content, :lead, :image)
     end     
 end

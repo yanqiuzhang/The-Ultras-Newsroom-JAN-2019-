@@ -9,4 +9,8 @@ Rails.application.routes.draw do
     namespace :journalist do
         resources :articles
     end
+
+    namespace :editor do
+        resources :articles
+    end
 end
