@@ -7,7 +7,9 @@
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Germania+One|Georgia', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application' %>
     <%= stylesheet_pack_tag 'application' %>
+    <script src="https://js.stripe.com/v3"></script>
   </head>
   <body class="bg-grey-lighter">
     <nav class="nav py-5 flex justify-between">
@@ -16,6 +18,7 @@
           <%= link_to_unless_current "Svenska", locale: 'sv', class: "header-links"  %>
       </div>
       <div class="float-right mr-5">
+        <%= link_to ('Subscribe'), new_subscription_path, class: "header-links" %>
         <% if user_signed_in? %>
           <%= link_to t('signout'), destroy_user_session_path, method: :delete, class: "header-links login-button" %>
         <% else %>
