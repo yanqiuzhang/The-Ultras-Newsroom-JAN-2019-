@@ -33,6 +33,10 @@ class SubscriptionsController < ApplicationController
   private
 
   def stripe_token(params)
-    Rails.env.test? ? params[:stripeToken] : params[:stripeToken]
+    Rails.env.test? ? generate_test_token : params[:stripeToken]
+  end
+
+  def generate_test_token
+    StripeMock.generate_card_token
   end
 end

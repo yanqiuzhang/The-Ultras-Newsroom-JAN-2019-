@@ -13,6 +13,8 @@ end
 Then("{string} should be a {string}") do |email, role|
     user = User.find_by(email: email)
     expect(user.role).to eq role
+end
+
 Then("I should see the image {string}") do |image|
     expect(page).to have_xpath("//img[contains(@src, \"#{image}\")]")   
 end
