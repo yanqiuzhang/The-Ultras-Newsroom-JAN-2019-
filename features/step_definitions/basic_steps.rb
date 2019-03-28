@@ -70,7 +70,7 @@ When("I fill in the payment form with invalid cc credentials") do
       exp_date_field = find_field('exp-date')
       cvc_field = find_field('cvc')
   
-      card_field.send_keys(right: '4000000000009995')
+      card_field.send_keys(right: '4000000000000127')
       exp_date_field.send_keys('1221')
       cvc_field.send_keys('123')
     end

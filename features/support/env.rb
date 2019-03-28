@@ -34,6 +34,10 @@ Before '@stripe' do
 	StripeMock.start
 end
 
+Before '@stripe_error_cvc' do
+  StripeMock.prepare_card_error(:incorrect_cvc)
+end
+
 After '@stripe' do
 	StripeMock.stop
 end 
