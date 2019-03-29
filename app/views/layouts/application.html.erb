@@ -18,10 +18,10 @@
           <%= link_to_unless_current "Svenska", locale: 'sv', class: "header-links"  %>
       </div>
       <div class="float-right mr-5">
-          <% if user_signed_in? == false || current_user.role == "visitor"  %>
-            <%= link_to t('subscribe', scope: 'links'), new_subscription_path, class: "header-links" %>
-          <% else %>
-          <% end %>
+        <% if user_signed_in? == false || current_user.role == "visitor"  %>
+          <%= link_to t('subscribe', scope: 'links'), new_subscription_path, class: "header-links" %>
+        <% else %>
+        <% end %>
         <% if user_signed_in? %>
           <%= link_to t('signout', scope: 'links'), destroy_user_session_path, method: :delete, class: "header-links login-button" %>
         <% else %>
@@ -30,7 +30,7 @@
         <% end %>
       </div>
     </nav>  
-      <%= notice || alert %>
-      <%= yield %>
+    <%= notice || alert %>
+    <%= yield %>
   </body>
 </html>
