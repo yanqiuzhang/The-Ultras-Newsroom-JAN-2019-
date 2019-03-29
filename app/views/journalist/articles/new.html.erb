@@ -1,11 +1,12 @@
+<div class="create_form">
 <%= form_with scope: :article, url: journalist_articles_path, local: true do |form| %>
-      <%= form.label :title %>
-      <%= form.text_field :title, required: true %>
-      <%= form.label :lead %>
-      <%= form.text_area :lead, required: true %>
-      <%= form.label :content %>
-      <%= form.text_area :content, required: true %>
-      <%= form.submit %>
+      <%= form.label :title %><br>
+      <%= form.text_field :title, required: true %><br>
+      <%= form.label :lead %><br>
+      <%= form.text_area :lead, required: true %><br>
+      <%= form.label :content %><br>
+      <%= form.text_area :content, required: true %><br>
+      <%= form.submit %><br>
 <% end %>
-
+</div>
 <%= link_to t('back'), :back %>

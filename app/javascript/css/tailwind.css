@@ -80,3 +80,7 @@ a:hover {
 .article-content {
     @apply m-32 text-2xl;
 }
+
+.create_form {
+    @apply text-center mt-10;
+}
