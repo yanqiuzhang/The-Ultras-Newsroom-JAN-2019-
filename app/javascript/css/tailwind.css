@@ -2,12 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+
 h1 {
-    font-family: 'Over the Rainbow', cursive;
-    @apply text-5xl; 
-    @apply text-center;
-    @apply mt-8;
-    @apply leading-loose;
+    font-family: 'Germania One', sans-serif;
+    font-size: 7rem;
+    @apply text-center mt-6 tracking-wide
+}
+
+.slogan {
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    @apply italic
 }
 
 .article-show {
@@ -20,19 +25,50 @@ h1 {
 
 .article-grid {
     display: grid;
-    grid-template-columns: 300px 300px 300px;
+    grid-template-columns: 500px 500px 500px;
     grid-template-rows: 150px 150px;
     grid-row-gap: 30px;
-    grid-column-gap: 50px;
-    @apply justify-center mt-6;
+    grid-column-gap: 0px;
+    @apply justify-center mt-6 p-0
 }
 
-body {
-    @apply bg-white font-serif;
+.nav {
+    @apply bg-black
+}
+
+.login_button {
+   @apply float-right mt-0 mr-4 p-4
+}
+
+
+.categories {
+    @apply no-underline text-white pl-8 pr-8 pt-2 pb-2 bg-black
+}
+
+.categories:hover {
+    @apply no-underline font-bold text-grey
+}
+
+
+.header-links {
+    @apply no-underline text-white font-bold inline-block
+}
+
+.header-links:hover {
+    @apply text-grey
+}
+
+a { 
+    color: inherit;
+    @apply no-underline
+} 
+
+a:hover {
+    @apply font-bold text-grey
 }
 
 .title-show {
-    @apply text-8xl uppercase mt-24 border-b-2;
+    @apply text-5xl uppercase mt-24 border-b-2;
 }
 
 .lead {
@@ -41,4 +77,8 @@ body {
 
 .article-content {
     @apply m-32 text-2xl;
+}
+
+.create_form {
+    @apply text-center mt-10;
 }

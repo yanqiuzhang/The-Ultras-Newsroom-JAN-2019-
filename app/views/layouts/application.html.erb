@@ -2,25 +2,35 @@
 <html>
   <head>
     <meta content="text/html; charset=UTF-8" http-equiv="Content-Type"/>
-    <title>TheUltrasNewsroomJan2019</title>
+    <title>The Viking Times</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Crimson+Text', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag 'application', 'https://fonts.googleapis.com/css?family=Germania+One|Georgia', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'application' %>
     <%= stylesheet_pack_tag 'application' %>
     <script src="https://js.stripe.com/v3"></script>
   </head>
-  <body>
-    <%= link_to_unless_current "English", locale: 'en' %>
-    <%= link_to_unless_current "Svenska", locale: 'sv' %>
-    <%= link_to ('Subscribe'), new_subscription_path %>
+  <body class="bg-grey-lighter">
+    <nav class="nav py-5 flex justify-between">
+      <div class="ml-3 text-white font-bold">
+          <%= link_to_unless_current "English", locale: 'en', class: "header-links" %>
+          <%= link_to_unless_current "Svenska", locale: 'sv', class: "header-links"  %>
+      </div>
+      <div class="float-right mr-5">
+        <% if user_signed_in? == false || current_user.role == "visitor"  %>
+          <%= link_to t('subscribe', scope: 'links'), new_subscription_path, class: "header-links" %>
+        <% else %>
+        <% end %>
+        <% if user_signed_in? %>
+          <%= link_to t('signout', scope: 'links'), destroy_user_session_path, method: :delete, class: "header-links login-button" %>
+        <% else %>
+          <%= link_to t('login', scope: 'links'), new_user_session_path, method: :new, class: "header-links login-button"%>
+          <%= link_to t('signup', scope: 'links'), new_user_registration_path, class: "header-links login-button"%>
+        <% end %>
+      </div>
+    </nav>  
     <%= notice || alert %>
     <%= yield %>
-    <% if user_signed_in? %>
-      <%= link_to t('signout', scope: 'links'), destroy_user_session_path, method: :delete %>
-    <% else %>
-      <%= link_to t('login', scope: 'links'), new_user_session_path, method: :new %>
-    <% end %>
   </body>
 </html>

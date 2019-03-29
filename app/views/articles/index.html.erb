@@ -1,36 +1,45 @@
-<div class="border-b-2">
-  <h1> The Viking Times </h1>
-</div>
-<div class="flex justify-center pt-2 border-b-2 pb-2">
-  <ul class="list-reset flex">
-    <li class="mx-2">
-      <%= link_to t('all', scope: 'links'), articles_path %>
-    </li>
-    <% @categories.each do |category| %>
-      <li class="mx-2">
-        <%= link_to t(category.name, scope: 'categories'), articles_path(params: {category: category.name}) %>
+<div class="mb-5">
+  <h1 class="text-black text-center"> The Viking Times </h1>
+  <p class="text-black text-center slogan">Ancient but Modern</p>
+</div> 
+<section class="flex justify-center ">
+  <span class="text-center pt-2 pb-2 border-t border-black w-4/5">
+    <ul class="list-reset flex justify-center">
+      <li class="mt-2 px-5">
+        <%= link_to t('all', scope: 'links'), articles_path %>
       </li>
-    <% end %>
-  </ul>
-</div>
-<div class="article-grid">
-  <% @articles.each do |article|%>
-    <div id="<%= dom_id(article) %>">
-      <%=  link_to(article_path(article)) do %>
-        <div class="max-w-sm rounded overflow-hidden shadow-lg">
-          <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">
-              <%= article.title %>
+      <% @categories.each do |category| %> 
+        <li class="mt-2 px-5">
+          <%= link_to t(category.name, scope: 'categories'), articles_path(params: {category: category.name}) %>
+        </li>
+      <% end %>
+    </ul>
+  </span>
+</section>
+<section class="flex justify-center">
+  <span class="mt-4">
+    <div class="article-grid">
+      <% @articles.each do |article|%>
+        <div id="<%= dom_id(article) %>">
+          <%=  link_to(article_path(article)) do %>
+            <div class="overflow-hidden">
+              <div class="px-6 py-4">
+                <div class="font-bold text-xl mb-2">
+                  <%= article.title %>
+                </div>
+                <p class="text-grey-darker text-base">
+                  <%= article.lead %>
+                </p>
+                <p class="text-grey-darker text-base">
+                  <%= image_tag article.image, style: 'height:auto;width:auto;' if article.image.attached? %>
+                </p>
+              </div>
             </div>
-            <p class="text-grey-darker text-base">
-              <%= article.lead %>
-            </p>
-            <p class="text-grey-darker text-base">
-              <%= image_tag article.image, style: 'height:auto;width:auto;' if article.image.attached? %>
-            </p>
-          </div>
+          <% end %>
         </div>
       <% end %>
     </div>
-  <% end %>
-</div>
+  </span>
+</section>
+
+
