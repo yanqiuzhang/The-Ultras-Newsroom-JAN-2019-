@@ -62,12 +62,11 @@ h1 {
 a { 
     color: inherit;
     @apply no-underline
- } 
+} 
 
 a:hover {
     @apply font-bold text-grey
 }
-
 
 .title-show {
     @apply text-5xl uppercase mt-24 border-b-2;
