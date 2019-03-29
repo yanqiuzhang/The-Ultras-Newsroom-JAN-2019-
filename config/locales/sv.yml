@@ -12,6 +12,8 @@ sv:
     all: Alla
     edit: Redigera
     delete: Ta bort
+    subscribe: Prenumerera
+    signup: Bli Medlem
 
   categories:
     lifestyle: Livsstil

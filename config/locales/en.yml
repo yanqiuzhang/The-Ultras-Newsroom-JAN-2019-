@@ -12,6 +12,8 @@ en:
     all: All
     edit: Edit
     delete: Delete
+    subscribe: Subscribe
+    signup: Sign up
   
   categories:
     lifestyle: Lifestyle
